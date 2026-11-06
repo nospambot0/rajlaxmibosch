@@ -25,10 +25,17 @@ export default function HomePage() {
       </div>
 
       <header className="site-header">
-        <a className="wordmark" href="/" aria-label="Rajlaxmi Enterprises home">
-          <span className="wordmark-name">rajlaxmi<span>.</span></span>
-          <span className="wordmark-caption">ENTERPRISES · BOSCH HOME APPLIANCES</span>
-        </a>
+        <div className="header-brand">
+          <a className="wordmark" href="/" aria-label="Rajlaxmi Enterprises home">
+            <span className="wordmark-name">rajlaxmi<span>.</span></span>
+            <span className="wordmark-caption">ENTERPRISES</span>
+          </a>
+          <span className="brand-divider" aria-hidden="true" />
+          <a className="bosch-brand" href="https://www.bosch-home.in/" target="_blank" rel="noreferrer" aria-label="Bosch Home Appliances">
+            <img className="bosch-header-logo" src="/bosch-logo.svg" alt="Bosch" />
+            <span className="bosch-brand-caption">HOME APPLIANCES</span>
+          </a>
+        </div>
         <nav className="desktop-nav" aria-label="Main navigation">
           <a href="#collections">Collections</a>
           <a href="#experience">The experience</a>
