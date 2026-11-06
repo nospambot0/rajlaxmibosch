@@ -88,6 +88,25 @@ export default async function ProductDetailPage({ params }: { params: Promise<Pr
     { label: "Product series", value: product.series },
     ...product.highlights.map((feature, index) => ({ label: `Key feature ${index + 1}`, value: feature }))
   ];
+
+  const dimensionAndCapacitySpecs = verifiedSpecs.filter((spec) =>
+    /(dimension|size|weight|height|width|depth|capacity|volume|place settings|load)/i.test(spec.label)
+  );
+  const energySpecs = verifiedSpecs.filter((spec) =>
+    /(energy|star rating|efficien|consumption|kwh|electricity)/i.test(spec.label)
+  );
+  const technicalSpecs = verifiedSpecs.filter(
+    (spec) => !dimensionAndCapacitySpecs.includes(spec) && !energySpecs.includes(spec)
+  );
+  const energyRatingApplies = /(washing|washer|refrigerator|dishwasher|air conditioner|cooling)/i.test(product.category);
+  const sameCategoryProducts = catalogueProducts.filter(
+    (item) => item.model !== product.model && item.category === product.category
+  );
+  const relatedProducts = (sameCategoryProducts.length
+    ? sameCategoryProducts
+    : catalogueProducts.filter((item) => item.model !== product.model && item.categoryLabel === product.categoryLabel)
+  ).slice(0, 4);
+
   const productUrl = `${siteUrl}/catalogue/${product.model.toLowerCase()}`;
   const structuredData = [
     {
@@ -130,6 +149,10 @@ export default async function ProductDetailPage({ params }: { params: Promise<Pr
           <p className="product-model">BOSCH MODEL {product.model}</p>
           <h1 id="product-title">{product.name}</h1>
           <p className="product-detail-summary">{product.summary}</p>
+          <section className="product-classification" aria-label="Product series and category">
+            <div><span>Series</span><strong>{product.series}</strong></div>
+            <div><span>Product category</span><strong>{product.category}</strong></div>
+          </section>
           <section className="product-detail-feature-section" aria-labelledby="product-features-title">
             <h2 id="product-features-title">Key features of Bosch {product.model}</h2>
             <ul className="product-highlights product-detail-highlights">{product.highlights.map((item) => <li key={item}>{item}</li>)}</ul>
@@ -145,9 +168,94 @@ export default async function ProductDetailPage({ params }: { params: Promise<Pr
         </div>
       </section>
       <section className="product-spec-section" aria-labelledby="product-specs-title">
-        <div><p className="eyebrow"><span className="eyebrow-line" /> BOSCH PRODUCT DETAILS</p><h2 id="product-specs-title">Bosch {product.model}<br /><em>specifications.</em></h2><p className="product-spec-intro">Published technical information for the Bosch {product.name}. Groups appear only when model-specific information is available; unlisted values are not assumed.</p></div>
-        <div className="product-spec-groups">{specSections.map((section) => { const rows=verifiedSpecs.filter((spec)=>section.test(spec.label)); return rows.length ? <section className="product-spec-group" key={section.title}><h3>{section.title}</h3><dl className="product-spec-table">{rows.map((spec)=><div key={spec.label}><dt>{spec.label}</dt><dd>{spec.value}</dd></div>)}</dl></section> : null; })}</div>
+        <div>
+          <p className="eyebrow"><span className="eyebrow-line" /> BOSCH PRODUCT DETAILS</p>
+          <h2 id="product-specs-title">Technical<br /><em>specifications.</em></h2>
+          <p className="product-spec-intro">Model-specific technical information published for Bosch {product.model}. Only verified values are shown; unavailable values are not guessed.</p>
+        </div>
+        <div className="product-spec-groups">
+          {specSections.map((section) => {
+            const rows = technicalSpecs.filter((spec) => section.test(spec.label));
+            return rows.length ? (
+              <section className="product-spec-group" key={section.title}>
+                <h3>{section.title}</h3>
+                <dl className="product-spec-table">
+                  {rows.map((spec) => <div key={spec.label}><dt>{spec.label}</dt><dd>{spec.value}</dd></div>)}
+                </dl>
+              </section>
+            ) : null;
+          })}
+          {!technicalSpecs.length && <p className="product-data-note">Detailed technical specifications have not yet been verified for this model.</p>}
+        </div>
       </section>
+
+      <section className="product-detail-extra-section" aria-labelledby="product-dimensions-title">
+        <div className="product-detail-extra-heading">
+          <p className="eyebrow"><span className="eyebrow-line" /> FIT &amp; CAPACITY</p>
+          <h2 id="product-dimensions-title">Dimensions<br /><em>&amp; capacity.</em></h2>
+        </div>
+        {dimensionAndCapacitySpecs.length ? (
+          <dl className="product-extra-spec-grid">
+            {dimensionAndCapacitySpecs.map((spec) => <div key={spec.label}><dt>{spec.label}</dt><dd>{spec.value}</dd></div>)}
+          </dl>
+        ) : (
+          <p className="product-data-note">Dimensions and capacity details are not currently verified in the catalogue for this model. Please refer to the official Bosch product documentation or ask our team before planning installation.</p>
+        )}
+      </section>
+
+      {(energyRatingApplies || energySpecs.length > 0) && (
+        <section className="product-energy-section" aria-labelledby="product-energy-title">
+          <div>
+            <p className="eyebrow"><span className="eyebrow-line" /> EFFICIENCY INFORMATION</p>
+            <h2 id="product-energy-title">Energy<br /><em>rating.</em></h2>
+          </div>
+          {energySpecs.length ? (
+            <dl className="product-extra-spec-grid">
+              {energySpecs.map((spec) => <div key={spec.label}><dt>{spec.label}</dt><dd>{spec.value}</dd></div>)}
+            </dl>
+          ) : (
+            <p className="product-data-note">An energy label or consumption value has not yet been verified for this exact model. Where applicable, check the product's current BEE label and Bosch documentation before comparing ratings.</p>
+          )}
+        </section>
+      )}
+
+      <section className="product-documents-section" aria-labelledby="product-documents-title">
+        <div>
+          <p className="eyebrow"><span className="eyebrow-line" /> OFFICIAL PRODUCT DOCUMENTS</p>
+          <h2 id="product-documents-title">Guides for<br /><em>your appliance.</em></h2>
+          <p>Open the official Bosch product information and support resources for this exact model.</p>
+        </div>
+        <div className="product-document-links">
+          <a href={product.officialUrl} target="_blank" rel="noreferrer">
+            <span className="product-document-icon" aria-hidden="true">↗</span>
+            <span><strong>Product brochure &amp; information</strong><small>Open the official Bosch product page for available product literature</small></span>
+            <span className="product-document-arrow" aria-hidden="true">↗</span>
+          </a>
+          <a href={product.documentsUrl} target="_blank" rel="noreferrer">
+            <span className="product-document-icon" aria-hidden="true">PDF</span>
+            <span><strong>User manual</strong><small>Find the manual using model number {product.model} on Bosch support</small></span>
+            <span className="product-document-arrow" aria-hidden="true">↗</span>
+          </a>
+        </div>
+      </section>
+
+      <section className="product-related-section" aria-labelledby="product-related-title">
+        <div className="product-related-heading">
+          <div><p className="eyebrow"><span className="eyebrow-line" /> KEEP EXPLORING</p><h2 id="product-related-title">Related<br /><em>products.</em></h2></div>
+          <a className="text-link" href="/catalogue">View full catalogue →</a>
+        </div>
+        {relatedProducts.length ? (
+          <div className="product-related-grid">
+            {relatedProducts.map((item) => (
+              <a className="product-related-card" href={`/catalogue/${item.model.toLowerCase()}`} key={item.model}>
+                <div className="product-related-image"><img src={item.image} alt={item.imageAlt} loading="lazy" /></div>
+                <div className="product-related-copy"><span>{item.series} · {item.category}</span><h3>{item.name}</h3><p>Model {item.model}</p><strong>View product ↗</strong></div>
+              </a>
+            ))}
+          </div>
+        ) : <p className="product-data-note">More related models will appear as the verified catalogue expands.</p>}
+      </section>
+
       <section className="product-warranty-note"><div><p className="eyebrow">BOSCH MANUFACTURER WARRANTY</p><h2>Warranty coverage, clearly explained.</h2><p>Warranty duration and covered components depend on the appliance category and, in some cases, the exact model. Confirm coverage against the product warranty card and Bosch’s current terms.</p></div><a className="text-link" href="/warranty">View Bosch warranty information →</a></section>
       <footer className="catalogue-footer"><a href="/">rajlaxmi<span>.</span> ENTERPRISES</a><span>Bosch Brand Store · Serving Bhubaneswar & Cuttack</span><div className="catalogue-footer-links"><a href="/terms">Terms &amp; Conditions</a><a href="/warranty">Warranty Information</a><a href={product.officialUrl} target="_blank" rel="noreferrer">Official Bosch details ↗</a></div></footer>
     </main>

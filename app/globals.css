@@ -427,3 +427,62 @@ body { font-size: 16px; line-height: 1.65; -webkit-font-smoothing: auto; }
 .mobile-nav-dropdown nav a:last-child{border-bottom:0}
 .mobile-nav-dropdown nav a:hover{background:#eeede7;color:var(--red)}
 @media(max-width:680px){.header-cta{display:none}.mobile-nav-dropdown{display:block}}
+
+
+/* Seven-section Bosch product detail layout */
+.product-classification{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin:22px 0 26px}
+.product-classification>div{display:flex;flex-direction:column;gap:5px;padding:13px 15px;background:#f0f0eb;border:1px solid #e2e2da}
+.product-classification span,.product-extra-spec-grid dt{font:10px var(--mono);letter-spacing:.07em;text-transform:uppercase;color:#73756d}
+.product-classification strong{font-size:15px;font-weight:600;color:var(--ink)}
+.product-detail-extra-section,.product-energy-section,.product-documents-section,.product-related-section{padding:68px 8.3%;background:#f8f8f5}
+.product-detail-extra-section,.product-documents-section{display:grid;grid-template-columns:.7fr 1.3fr;gap:7%;align-items:start}
+.product-detail-extra-heading h2,.product-energy-section h2,.product-documents-section h2,.product-related-heading h2{font-size:clamp(34px,4vw,50px);line-height:1.08;margin:12px 0}
+.product-extra-spec-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;margin:0}
+.product-extra-spec-grid>div{padding:17px 18px;background:#fff;border:1px solid #e4e4dd;min-width:0}
+.product-extra-spec-grid dt{margin-bottom:8px}
+.product-extra-spec-grid dd{margin:0;font-size:16px;line-height:1.55;font-weight:600;color:var(--ink);overflow-wrap:anywhere}
+.product-energy-section{display:grid;grid-template-columns:.7fr 1.3fr;gap:7%;align-items:start;background:#e8e7e1}
+.product-data-note{font-size:15px;line-height:1.8;color:#62645e;margin:0;padding:18px 20px;background:#fff;border:1px solid #e4e4dd}
+.product-documents-section{background:#f0efe9}
+.product-documents-section>div:first-child>p:last-child{font-size:15px;line-height:1.8;color:#62645e;max-width:420px}
+.product-document-links{display:grid;gap:12px}
+.product-document-links>a{display:grid;grid-template-columns:48px 1fr 20px;gap:16px;align-items:center;padding:19px 20px;background:#fff;border:1px solid #e1e1d9;color:var(--ink);text-decoration:none;transition:border-color .2s,transform .2s}
+.product-document-links>a:hover{border-color:var(--red);transform:translateY(-2px)}
+.product-document-icon{width:44px;height:44px;display:grid;place-items:center;background:#f0f0eb;color:var(--red);font:11px var(--mono)}
+.product-document-links strong,.product-document-links small{display:block}
+.product-document-links strong{font-size:15px;line-height:1.4}
+.product-document-links small{font-size:12px;line-height:1.6;color:#696b64;margin-top:4px}
+.product-document-arrow{color:var(--red)}
+.product-related-section{background:#fff}
+.product-related-heading{display:flex;justify-content:space-between;align-items:end;gap:25px;margin-bottom:28px}
+.product-related-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:15px}
+.product-related-card{display:block;color:var(--ink);text-decoration:none;border:1px solid #e4e4dd;min-width:0;transition:transform .2s,border-color .2s}
+.product-related-card:hover{transform:translateY(-3px);border-color:#b8b9b0}
+.product-related-image{height:205px;background:#f4f4ef;display:grid;place-items:center;padding:15px}
+.product-related-image img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
+.product-related-copy{padding:16px}
+.product-related-copy>span{font:9px var(--mono);line-height:1.6;color:#73756d;text-transform:uppercase}
+.product-related-copy h3{font-size:16px;line-height:1.35;margin:10px 0}
+.product-related-copy p{font:10px var(--mono);color:#696b64;margin:0 0 13px}
+.product-related-copy strong{font-size:12px;color:var(--red)}
+@media(max-width:900px){.product-related-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:680px){
+ .product-classification{gap:8px}
+ .product-classification>div{padding:11px}
+ .product-classification strong{font-size:13px}
+ .product-detail-extra-section,.product-energy-section,.product-documents-section,.product-related-section{padding:48px 6%;grid-template-columns:1fr;gap:24px}
+ .product-extra-spec-grid{grid-template-columns:1fr 1fr;gap:8px}
+ .product-extra-spec-grid>div{padding:13px}
+ .product-extra-spec-grid dd{font-size:14px}
+ .product-data-note{font-size:14px}
+ .product-document-links>a{grid-template-columns:38px 1fr 16px;gap:11px;padding:15px 12px}
+ .product-document-icon{width:36px;height:36px}
+ .product-document-links strong{font-size:14px}
+ .product-document-links small{font-size:11px}
+ .product-related-heading{align-items:start;flex-direction:column}
+ .product-related-grid{grid-template-columns:1fr 1fr;gap:9px}
+ .product-related-image{height:145px;padding:10px}
+ .product-related-copy{padding:11px}
+ .product-related-copy h3{font-size:14px}
+ .product-related-copy>span{font-size:8px}
+}
