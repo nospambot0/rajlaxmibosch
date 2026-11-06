@@ -22,11 +22,11 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
           <h1>{product.name}</h1>
           <p className="product-detail-summary">{product.summary}</p>
           <div className="product-highlights product-detail-highlights">{product.highlights.map((item) => <span key={item}>{item}</span>)}</div>
-          <p className="product-enquiry-note">Ask Rajlaxmi Enterprises for current MRP, best available price, stock and delivery details.</p>
+          <p className="product-enquiry-note">{product.manufacturerMrp !== null ? <>Bosch published MRP: <strong>₹{product.manufacturerMrp.toLocaleString("en-IN")}</strong>. Rajlaxmi’s best available price is shared on enquiry.</> : "Ask Rajlaxmi Enterprises to confirm the latest Bosch MRP and your best available price."}</p>
           <div className="product-detail-actions"><a className="button button-dark" href={product.officialUrl} target="_blank" rel="noreferrer">View on Bosch ↗</a><a className="text-link" href="/catalogue">Explore more models →</a></div>
           <p className="product-source-note">Manuals & product documents: <a href={product.documentsUrl} target="_blank" rel="noreferrer">find documents by model number on Bosch ↗</a></p>
           <p className="product-source-note">Rajlaxmi pricing & availability: {product.retailer.availability === "enquiry" ? "Please enquire for local price and stock." : product.retailer.availability}</p>
-          <p className="product-source-note">Product information checked against Bosch Home Appliances India on {product.sourceChecked}.</p>
+          <p className="product-source-note">Product information checked against Bosch Home Appliances India on {product.sourceChecked}.{product.manufacturerMrpCheckedAt ? ` Bosch MRP checked on ${product.manufacturerMrpCheckedAt}.` : " Bosch MRP not yet verified."}</p>
         </div>
       </section>
       <section className="product-spec-section"><div><p className="eyebrow"><span className="eyebrow-line" /> PRODUCT INFORMATION</p><h2>Technical<br /><em>overview.</em></h2></div><div className="product-spec-table">{product.specs.map((spec) => <div key={spec.label}><span>{spec.label}</span><strong>{spec.value}</strong></div>)}</div></section>
