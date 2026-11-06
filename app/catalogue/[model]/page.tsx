@@ -1,7 +1,28 @@
 import { notFound } from "next/navigation";
 import { catalogueProducts } from "../../../data/catalogue";
+import ProductGallery from "./product-gallery";
 
 const formatRupees = (amount: number) => `₹${amount.toLocaleString("en-IN")}`;
+
+export const revalidate = 86400;
+
+async function getBoschGallery(product: (typeof catalogueProducts)[number]) {
+  try {
+    const response = await fetch(product.officialUrl, {
+      next: { revalidate: 86400 },
+      headers: { "User-Agent": "Mozilla/5.0 (compatible; RajlaxmiCatalogue/1.0)" }
+    });
+    if (!response.ok) return [product.image];
+    const html = await response.text();
+    const matches = [...html.matchAll(/https?:\\?\/\\?\/media3\.bsh-group\.com\\?\/Product_Shots\\?\/5120x\\?\/[^"'<>]+?\.(?:webp|jpg|png)/gi)]
+      .map((match) => match[0].replace(/\\/g, "/").replace(/&amp;/g, "&"));
+    const gallery = [...new Set(matches)].filter((url) => url.includes(product.model));
+    const primary = gallery.find((url) => /_STP_def\.(?:webp|jpg|png)$/i.test(url)) || product.image;
+    return [primary, ...gallery.filter((url) => url !== primary)];
+  } catch {
+    return [product.image];
+  }
+}
 
 export function generateStaticParams() {
   return catalogueProducts.map((product) => ({ model: product.model.toLowerCase() }));
@@ -11,13 +32,14 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
   const { model } = await params;
   const product = catalogueProducts.find((item) => item.model.toLowerCase() === model.toLowerCase());
   if (!product) notFound();
+  const galleryImages = await getBoschGallery(product);
 
   return (
     <main className="product-detail-page">
       <div className="catalogue-topline"><a className="catalogue-back" href="/catalogue">← Back to catalogue</a><span>RAJLAXMI ENTERPRISES · BOSCH HOME APPLIANCES</span></div>
       <div className="product-detail-breadcrumb"><a href="/">Home</a><span>/</span><a href="/catalogue">Catalogue</a><span>/</span><span>{product.model}</span></div>
       <section className="product-detail-layout">
-        <div className="product-detail-image"><img src={product.image} alt={product.imageAlt} /></div>
+        <ProductGallery images={galleryImages} alt={product.imageAlt} model={product.model} />
         <div className="product-detail-copy">
           <p className="eyebrow"><span className="eyebrow-line" /> {product.categoryLabel} / {product.series}</p>
           <p className="product-model">MODEL {product.model}</p>

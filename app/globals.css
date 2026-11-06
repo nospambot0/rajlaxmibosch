@@ -311,3 +311,15 @@ body { font-size: 16px; line-height: 1.65; -webkit-font-smoothing: auto; }
 .category-card:hover{background:#20221f!important}
 .catalogue-page .product-image img,.product-detail-image img{display:block}
 @media(prefers-reduced-motion:reduce){.category-card-image{transition:none}.category-card:hover .category-card-image{transform:none}}
+
+
+/* Bosch product-page photo gallery */
+.product-gallery{background:#f8f8f5;padding:28px;min-width:0}
+.product-gallery-main{min-height:460px;display:grid;place-items:center;background:#fff}
+.product-gallery-main img{width:100%;height:460px;object-fit:contain;mix-blend-mode:multiply}
+.product-gallery-thumbs{display:flex;gap:9px;overflow-x:auto;padding:14px 2px 3px}
+.product-gallery-thumb{flex:0 0 76px;height:76px;padding:5px;border:1px solid #d8d8d1;background:#fff;cursor:pointer}
+.product-gallery-thumb[aria-pressed="true"]{border:2px solid var(--red)}
+.product-gallery-thumb img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
+.product-gallery-count{font:10px var(--mono);color:#777970;padding-top:10px}
+@media(max-width:680px){.product-gallery{padding:16px}.product-gallery-main{min-height:300px}.product-gallery-main img{height:300px}.product-gallery-thumb{flex-basis:64px;height:64px}}
