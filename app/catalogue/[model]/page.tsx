@@ -33,6 +33,11 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
   const product = catalogueProducts.find((item) => item.model.toLowerCase() === model.toLowerCase());
   if (!product) notFound();
   const galleryImages = await getBoschGallery(product);
+  const verifiedSpecs = product.specs.length ? product.specs : [
+    { label: "Appliance type", value: product.name },
+    { label: "Product series", value: product.series },
+    ...product.highlights.map((feature, index) => ({ label: `Key feature ${index + 1}`, value: feature }))
+  ];
 
   return (
     <main className="product-detail-page">
@@ -53,10 +58,10 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
           </section>
           <div className="product-detail-actions"><button className="button button-dark" type="button" disabled>Enquire for Price</button><a className="text-link" href="/catalogue">Explore more models →</a></div>
           <p className="product-source-note">Rajlaxmi stock & delivery: {product.retailer.availability === "enquiry" ? "Please enquire for local availability." : product.retailer.availability}</p>
-          <p className="product-source-note">Product information checked against Bosch Home Appliances India on {product.sourceChecked}.</p>
+          <p className="product-source-note">Product information checked against Bosch Home Appliances India on {product.sourceChecked}. Specifications shown are those published for this model; contact Rajlaxmi for clarification or current availability.</p>
         </div>
       </section>
-      <section className="product-spec-section"><div><p className="eyebrow"><span className="eyebrow-line" /> PRODUCT INFORMATION</p><h2>Technical<br /><em>overview.</em></h2></div><div className="product-spec-table">{product.specs.map((spec) => <div key={spec.label}><span>{spec.label}</span><strong>{spec.value}</strong></div>)}</div></section>
+      <section className="product-spec-section"><div><p className="eyebrow"><span className="eyebrow-line" /> PRODUCT INFORMATION</p><h2>Technical<br /><em>overview.</em></h2></div><div className="product-spec-table">{verifiedSpecs.map((spec) => <div key={spec.label}><span>{spec.label}</span><strong>{spec.value}</strong></div>)}</div></section>
       <footer className="catalogue-footer"><a href="/">rajlaxmi<span>.</span> ENTERPRISES</a><span>Independent authorised Bosch home appliances retailer · Bhubaneswar, Odisha</span><a href={product.officialUrl} target="_blank" rel="noreferrer">Official Bosch details ↗</a></footer>
     </main>
   );
