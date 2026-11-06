@@ -37,6 +37,7 @@ export default function HomePage() {
           </a>
         </div>
         <nav className="desktop-nav" aria-label="Main navigation">
+          <a href="/catalogue">Catalogue</a>
           <a href="#collections">Collections</a>
           <a href="#experience">The experience</a>
           <a href="#about">About us</a>
@@ -54,7 +55,7 @@ export default function HomePage() {
             Personal guidance, considered choices and a more confident way to choose for your home.
           </p>
           <div className="hero-actions">
-            <a className="button button-dark" href="#collections">Explore appliances <span aria-hidden="true">↗</span></a>
+            <a className="button button-dark" href="/catalogue">Explore catalogue <span aria-hidden="true">↗</span></a>
             <a className="text-link" href="#contact">Plan a showroom visit <span aria-hidden="true">→</span></a>
           </div>
           <div className="hero-footnote"><span className="small-dot" /> INDEPENDENTLY OWNED AUTHORISED RETAILER</div>
@@ -91,13 +92,13 @@ export default function HomePage() {
         </div>
         <div className="category-grid">
           {categories.map((category) => (
-            <a className="category-card" href="#contact" key={category.number}>
+            <a className="category-card" href={`/catalogue?category=${encodeURIComponent(category.name)}`} key={category.number}>
               <div className="category-card-top"><span>{category.number} / 06</span><span className="category-icon" aria-hidden="true">{category.icon}</span></div>
               <div className="category-card-bottom"><div><h3>{category.name}</h3><p>{category.detail}</p></div><span className="circle-arrow" aria-hidden="true">↗</span></div>
             </a>
           ))}
         </div>
-        <p className="catalogue-note">The complete product catalogue is being organised. Contact our team for current models and availability.</p>
+        <p className="catalogue-note">Explore selected Bosch models with official product imagery and specifications. Pricing and stock are confirmed directly by Rajlaxmi Enterprises.</p><a className="text-link catalogue-link" href="/catalogue">View selected products <span aria-hidden="true">→</span></a>
       </section>
 
       <section className="experience" id="experience">
