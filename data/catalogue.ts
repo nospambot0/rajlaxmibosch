@@ -500,7 +500,125 @@ export const catalogueProducts: CatalogueProduct[] = [
     sourceChecked: "2026-11-06",
     documentsUrl: "https://www.bosch-home.in/service/get-support/manual-search",
     retailer: { mrp: null, offerPrice: null, availability: "enquiry" }
-  }
+  },
+
+  {
+    id: "wga1320tin", name: "Series 4 front-loading washing machine 8 kg", model: "WGA1320TIN",
+    category: "Washing machines", categoryLabel: "Laundry", series: "Series 4",
+    summary: "8 kg front-loading washer with 1200 rpm spin speed, Reload and SpeedPerfect.",
+    image: "https://media3.bsh-group.com/Product_Shots/5120x/26417991_WGA1320TIN_STP_def.webp", imageAlt: "Bosch WGA1320TIN front-loading washing machine",
+    officialUrl: "https://www.bosch-home.in/en/product/washer-dryer/washing-machines/front-loading-washing-machines/WGA1320TIN",
+    highlights: ["8 kg capacity","1200 rpm spin speed","Reload function","SpeedPerfect"],
+    specs: [{"label":"Capacity","value":"8 kg"},{"label":"Maximum spin speed","value":"1200 rpm"},{"label":"Dimensions","value":"848 × 598 × 590 mm"},{"label":"Home Connect","value":"No"},{"label":"Finish","value":"Dark lake"}],
+    source: "Bosch Home Appliances India product page", sourceChecked: "2026-11-06",
+    manufacturerMrp: 64590, manufacturerMrpSourceUrl: "https://www.bosch-home.in/en/product/washer-dryer/washing-machines/front-loading-washing-machines/WGA1320TIN", manufacturerMrpCheckedAt: "2026-11-06",
+    documentsUrl: "https://www.bosch-home.in/service/get-support/manual-search",
+    retailer: { mrp: null, offerPrice: null, availability: "enquiry" }
+  },
+  {
+    id: "wga1420tin", name: "Series 6 front-loading washing machine 9 kg", model: "WGA1420TIN",
+    category: "Washing machines", categoryLabel: "Laundry", series: "Series 6",
+    summary: "9 kg front-loading washer with 1200 rpm spin speed, Anti Stain Plus and SpeedPerfect.",
+    image: "https://media3.bsh-group.com/Product_Shots/5120x/24731107_WGA1420TIN_STP_def.webp", imageAlt: "Bosch WGA1420TIN front-loading washing machine",
+    officialUrl: "https://www.bosch-home.in/en/product/washer-dryer/washing-machines/front-loading-washing-machines/WGA1420TIN",
+    highlights: ["9 kg capacity","1200 rpm spin speed","Anti Stain Plus","SpeedPerfect"],
+    specs: [{"label":"Capacity","value":"9 kg"},{"label":"Maximum spin speed","value":"1200 rpm"},{"label":"Dimensions","value":"848 × 598 × 590 mm"},{"label":"Drum volume","value":"53 litres"},{"label":"Home Connect","value":"No"}],
+    source: "Bosch Home Appliances India product page", sourceChecked: "2026-11-06",
+    manufacturerMrp: 68690, manufacturerMrpSourceUrl: "https://www.bosch-home.in/en/product/washer-dryer/washing-machines/front-loading-washing-machines/WGA1420TIN", manufacturerMrpCheckedAt: "2026-11-06",
+    documentsUrl: "https://www.bosch-home.in/service/get-support/manual-search",
+    retailer: { mrp: null, offerPrice: null, availability: "enquiry" }
+  },
+  {
+    id: "waj2826din", name: "Series 2 front-loading washing machine 8 kg", model: "WAJ2826DIN",
+    category: "Washing machines", categoryLabel: "Laundry", series: "Series 2",
+    summary: "8 kg front-loading washer with 1400 rpm spin speed, AntiVibration design and ActiveOxygen Refresh.",
+    image: "https://media3.bsh-group.com/Product_Shots/5120x/26384240_WAJ2826DIN_STP_def.webp", imageAlt: "Bosch WAJ2826DIN front-loading washing machine",
+    officialUrl: "https://www.bosch-home.in/en/product/washer-dryer/washing-machines/front-loading-washing-machines/WAJ2826DIN",
+    highlights: ["8 kg capacity","1400 rpm spin speed","AntiVibration design","ActiveOxygen Refresh"],
+    specs: [{"label":"Capacity","value":"8 kg"},{"label":"Maximum spin speed","value":"1400 rpm"},{"label":"Dimensions","value":"848 × 598 × 590 mm"},{"label":"Drum volume","value":"55 litres"},{"label":"Home Connect","value":"No"}],
+    source: "Bosch Home Appliances India product page", sourceChecked: "2026-11-06",
+    manufacturerMrp: 67590, manufacturerMrpSourceUrl: "https://www.bosch-home.in/en/product/washer-dryer/washing-machines/front-loading-washing-machines/WAJ2826DIN", manufacturerMrpCheckedAt: "2026-11-06",
+    documentsUrl: "https://www.bosch-home.in/service/get-support/manual-search",
+    retailer: { mrp: null, offerPrice: null, availability: "enquiry" }
+  },
+  {
+    id: "ctn35s31vi", name: "Series 4 top-freezer fridge-freezer 175 cm", model: "CTN35S31VI",
+    category: "Refrigerators", categoryLabel: "Cooling", series: "Series 4",
+    summary: "175 cm top-freezer fridge-freezer with Total No Frost, VitaFresh and VarioInverter compressor.",
+    image: "https://media3.bsh-group.com/Product_Shots/5120x/28043135_CTN35S31VI_STP_def.webp", imageAlt: "Bosch CTN35S31VI silver top-freezer fridge-freezer",
+    officialUrl: "https://www.bosch-home.in/en/product/fridges-freezers/fridgefreezers/free-standing-top-freezers/CTN35S31VI",
+    highlights: ["175 cm height","Total No Frost","VitaFresh","VarioInverter compressor"],
+    specs: [{"label":"Type","value":"Freestanding top-freezer fridge-freezer"},{"label":"Dimensions","value":"175 × 67 cm"},{"label":"Cooling","value":"Total No Frost"},{"label":"Freshness system","value":"VitaFresh"},{"label":"Home Connect","value":"No"}],
+    source: "Bosch Home Appliances India product page", sourceChecked: "2026-11-06",
+    manufacturerMrp: 60390, manufacturerMrpSourceUrl: "https://www.bosch-home.in/en/product/fridges-freezers/fridgefreezers/free-standing-top-freezers/CTN35S31VI", manufacturerMrpCheckedAt: "2026-11-06",
+    documentsUrl: "https://www.bosch-home.in/service/get-support/manual-search",
+    retailer: { mrp: null, offerPrice: null, availability: "enquiry" }
+  },
+  {
+    id: "ctn29s21vi", name: "Series 4 top-freezer fridge-freezer 168 cm", model: "CTN29S21VI",
+    category: "Refrigerators", categoryLabel: "Cooling", series: "Series 4",
+    summary: "168 cm silver top-freezer fridge-freezer with Total No Frost, VitaFresh and VarioInverter compressor.",
+    image: "https://media3.bsh-group.com/Product_Shots/5120x/28043123_CTN29S21VI_STP_def.webp", imageAlt: "Bosch CTN29S21VI silver top-freezer fridge-freezer",
+    officialUrl: "https://www.bosch-home.in/en/product/fridges-freezers/fridgefreezers/free-standing-top-freezers/CTN29S21VI",
+    highlights: ["168 cm height","Total No Frost","VitaFresh","Silver finish"],
+    specs: [{"label":"Type","value":"Freestanding top-freezer fridge-freezer"},{"label":"Dimensions","value":"168 × 60.5 cm"},{"label":"Cooling","value":"Total No Frost"},{"label":"Freshness system","value":"VitaFresh"},{"label":"Home Connect","value":"No"}],
+    source: "Bosch Home Appliances India product page", sourceChecked: "2026-11-06",
+    manufacturerMrp: 48040, manufacturerMrpSourceUrl: "https://www.bosch-home.in/en/product/fridges-freezers/fridgefreezers/free-standing-top-freezers/CTN29S21VI", manufacturerMrpCheckedAt: "2026-11-06",
+    documentsUrl: "https://www.bosch-home.in/service/get-support/manual-search",
+    retailer: { mrp: null, offerPrice: null, availability: "enquiry" }
+  },
+  {
+    id: "ctc27s22vi", name: "Series 4 top-freezer fridge-freezer 156 cm", model: "CTC27S22VI",
+    category: "Refrigerators", categoryLabel: "Cooling", series: "Series 4",
+    summary: "156 cm silver top-freezer fridge-freezer with Total No Frost and VitaFresh.",
+    image: "https://media3.bsh-group.com/Product_Shots/5120x/28222189_CTC27S22VI_STP_def.webp", imageAlt: "Bosch CTC27S22VI silver top-freezer fridge-freezer",
+    officialUrl: "https://www.bosch-home.in/en/product/fridges-freezers/fridgefreezers/free-standing-top-freezers/CTC27S22VI",
+    highlights: ["156 cm height","Total No Frost","VitaFresh","Silver finish"],
+    specs: [{"label":"Type","value":"Freestanding top-freezer fridge-freezer"},{"label":"Dimensions","value":"156 × 60.5 cm"},{"label":"Cooling","value":"Total No Frost"},{"label":"Freshness system","value":"VitaFresh"},{"label":"Home Connect","value":"No"}],
+    source: "Bosch Home Appliances India product page", sourceChecked: "2026-11-06",
+    manufacturerMrp: 43640, manufacturerMrpSourceUrl: "https://www.bosch-home.in/en/product/fridges-freezers/fridgefreezers/free-standing-top-freezers/CTC27S22VI", manufacturerMrpCheckedAt: "2026-11-06",
+    documentsUrl: "https://www.bosch-home.in/service/get-support/manual-search",
+    retailer: { mrp: null, offerPrice: null, availability: "enquiry" }
+  },
+  {
+    id: "sms6hvi01i", name: "Series 6 freestanding dishwasher 60 cm", model: "SMS6HVI01I",
+    category: "Dishwashers", categoryLabel: "Kitchen", series: "Series 6",
+    summary: "Freestanding dishwasher with 14 place settings, six programmes, heat-exchanger drying and Home Connect.",
+    image: "https://media3.bsh-group.com/Product_Shots/5120x/17016139_SMS6HVI01I_STP_def.webp", imageAlt: "Bosch SMS6HVI01I freestanding dishwasher",
+    officialUrl: "https://www.bosch-home.in/en/product/SMS6HVI01I",
+    highlights: ["14 place settings","6 programmes","Home Connect","Heat exchanger drying"],
+    specs: [{"label":"Installation","value":"Freestanding"},{"label":"Place settings","value":"14"},{"label":"Programmes","value":"6"},{"label":"Water consumption","value":"9.5 litres"},{"label":"Dimensions","value":"845 × 600 × 600 mm"}],
+    source: "Bosch Home Appliances India product page", sourceChecked: "2026-11-06",
+    manufacturerMrp: 69690, manufacturerMrpSourceUrl: "https://www.bosch-home.in/en/product/SMS6HVI01I", manufacturerMrpCheckedAt: "2026-11-06",
+    documentsUrl: "https://www.bosch-home.in/service/get-support/manual-search",
+    retailer: { mrp: null, offerPrice: null, availability: "enquiry" }
+  },
+  {
+    id: "pib375fb5i", name: "Series 6 Domino induction hob 30 cm", model: "PIB375FB5I",
+    category: "Ovens & cooking", categoryLabel: "Cooking", series: "Series 6",
+    summary: "30 cm two-zone Domino induction hob with touch controls, PowerBoost and child lock.",
+    image: "https://media3.bsh-group.com/Product_Shots/5120x/MCSA02951098_PIB375FB5I_ElectricHob_Bosch_STP_def.webp", imageAlt: "Bosch PIB375FB5I Domino induction hob",
+    officialUrl: "https://www.bosch-home.in/en/product/PIB375FB5I",
+    highlights: ["30 cm width","2 cooking zones","Touch control","PowerBoost"],
+    specs: [{"label":"Cooktop type","value":"Induction"},{"label":"Cooking zones","value":"2"},{"label":"Dimensions","value":"51 × 306 × 527 mm"},{"label":"Control","value":"Touch control"},{"label":"Safety","value":"Child lock"}],
+    source: "Bosch Home Appliances India product page", sourceChecked: "2026-11-06",
+    manufacturerMrp: 64490, manufacturerMrpSourceUrl: "https://www.bosch-home.in/en/product/PIB375FB5I", manufacturerMrpCheckedAt: "2026-11-06",
+    documentsUrl: "https://www.bosch-home.in/service/get-support/manual-search",
+    retailer: { mrp: null, offerPrice: null, availability: "enquiry" }
+  },
+  {
+    id: "bel554mh2i", name: "Series 6 built-in microwave with grill", model: "BEL554MH2I",
+    category: "Ovens & cooking", categoryLabel: "Cooking", series: "Series 6",
+    summary: "Built-in 25 litre microwave with grill, AutoPilot 8 programmes and hydrolytic cleaning assistance.",
+    image: "https://media3.bsh-group.com/Product_Shots/5120x/25607446_BEL554MH2I_STP_def.webp", imageAlt: "Bosch BEL554MH2I built-in microwave with grill",
+    officialUrl: "https://www.bosch-home.in/en/product/cooking-baking/built-in-microwaves/builtinmicrowave/BEL554MH2I",
+    highlights: ["25 litre capacity","900 W microwave power","Grill function","8 automatic programmes"],
+    specs: [{"label":"Installation","value":"Built-in"},{"label":"Cavity capacity","value":"25 litres"},{"label":"Microwave power","value":"900 W"},{"label":"Automatic programmes","value":"8"},{"label":"Cleaning","value":"Hydrolytic"}],
+    source: "Bosch Home Appliances India product page", sourceChecked: "2026-11-06",
+    manufacturerMrp: 79990, manufacturerMrpSourceUrl: "https://www.bosch-home.in/en/product/cooking-baking/built-in-microwaves/builtinmicrowave/BEL554MH2I", manufacturerMrpCheckedAt: "2026-11-06",
+    documentsUrl: "https://www.bosch-home.in/service/get-support/manual-search",
+    retailer: { mrp: null, offerPrice: null, availability: "enquiry" }
+  },
 ];
 
 export const catalogueCategories = [
