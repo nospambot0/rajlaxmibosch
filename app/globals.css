@@ -339,8 +339,8 @@ body { font-size: 16px; line-height: 1.65; -webkit-font-smoothing: auto; }
 .experience-photo-caption{position:absolute;bottom:28px;left:9%;right:9%;display:flex;justify-content:space-between;align-items:center;color:#f5f4ee;text-shadow:0 1px 8px #0008}
 .experience-photo-caption span{font-size:8px}
 .experience-photo-caption strong{font:italic 16px var(--serif);font-weight:500}
-.category-card-image{object-fit:contain!important;padding:22px;background:#f0f0eb;mix-blend-mode:normal}
-.category-card-shade{background:linear-gradient(180deg,rgba(15,16,15,.03) 0%,rgba(15,16,15,.04) 38%,rgba(15,16,15,.78) 100%)}
+.category-card{position:relative;isolation:isolate;overflow:hidden}\n.category-card-image{z-index:0!important;object-fit:contain!important;padding:22px;background:#f0f0eb;mix-blend-mode:normal}
+.category-card-shade{z-index:1!important;background:linear-gradient(180deg,rgba(15,16,15,.03) 0%,rgba(15,16,15,.04) 38%,rgba(15,16,15,.78) 100%)}\n.category-card-top,.category-card-bottom{z-index:2!important}
 @media(max-width:680px){
  .hero-product-art{min-height:370px}
  .hero-photo-frame{width:88%;height:350px}
