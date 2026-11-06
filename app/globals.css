@@ -323,3 +323,33 @@ body { font-size: 16px; line-height: 1.65; -webkit-font-smoothing: auto; }
 .product-gallery-thumb img{width:100%;height:100%;object-fit:contain;mix-blend-mode:multiply}
 .product-gallery-count{font:10px var(--mono);color:#777970;padding-top:10px}
 @media(max-width:680px){.product-gallery{padding:16px}.product-gallery-main{min-height:300px}.product-gallery-main img{height:300px}.product-gallery-thumb{flex-basis:64px;height:64px}}
+
+
+/* Real Bosch product photography on the homepage */
+.hero-product-art{min-height:460px}
+.hero-photo-frame{position:relative;width:min(88%,520px);height:440px;background:linear-gradient(145deg,#eeede7,#e3e2db);display:grid;place-items:center;overflow:hidden;box-shadow:0 24px 60px #17181614}
+.hero-photo-frame>img{width:78%;height:82%;object-fit:contain;mix-blend-mode:multiply}
+.hero-photo-label{position:absolute;left:22px;right:22px;bottom:18px;display:flex;justify-content:space-between;align-items:end;gap:16px;color:#5d6058}
+.hero-photo-label span,.experience-photo-caption span{font:8px var(--mono);letter-spacing:.12em}
+.hero-photo-label strong{font:italic 16px var(--serif);font-weight:500}
+.experience-photo-visual{display:flex;align-items:center;justify-content:center;padding:9%}
+.experience-photo-grid{width:100%;height:430px;display:grid;grid-template-columns:1.25fr .75fr;grid-template-rows:1fr 1fr;gap:10px}
+.experience-photo-grid img{width:100%;height:100%;object-fit:contain;background:#f0f0eb;padding:12px;mix-blend-mode:normal}
+.experience-photo-grid .experience-photo-main{grid-row:1 / span 2;background:#e5e5de;padding:22px}
+.experience-photo-caption{position:absolute;bottom:28px;left:9%;right:9%;display:flex;justify-content:space-between;align-items:center;color:#f5f4ee;text-shadow:0 1px 8px #0008}
+.experience-photo-caption span{font-size:8px}
+.experience-photo-caption strong{font:italic 16px var(--serif);font-weight:500}
+.category-card-image{object-fit:contain!important;padding:22px;background:#f0f0eb;mix-blend-mode:normal}
+.category-card-shade{background:linear-gradient(180deg,rgba(15,16,15,.03) 0%,rgba(15,16,15,.04) 38%,rgba(15,16,15,.78) 100%)}
+@media(max-width:680px){
+ .hero-product-art{min-height:370px}
+ .hero-photo-frame{width:88%;height:350px}
+ .hero-photo-label{left:14px;right:14px;bottom:14px;display:block}
+ .hero-photo-label strong{display:block;margin-top:5px}
+ .experience-photo-visual{min-height:390px;padding:7%}
+ .experience-photo-grid{height:300px;gap:7px}
+ .experience-photo-grid img{padding:7px}
+ .experience-photo-caption{bottom:22px;left:7%;right:7%;display:block}
+ .experience-photo-caption strong{display:block;margin-top:5px}
+ .category-card-image{padding:12px}
+}

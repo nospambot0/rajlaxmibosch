@@ -1,12 +1,16 @@
 "use client";
 
+import { catalogueProducts } from "@/data/catalogue";
+
+const productImage = (model: string) => catalogueProducts.find((product) => product.model === model)?.image ?? "";
+
 const categories = [
-  { number: "01", name: "Washing machines", detail: "Care for every fabric", image: "https://media3.bsh-group.com/Product_Shots/5120x/25796548_WGA254ZPIN_STP_def.webp" },
-  { number: "02", name: "Refrigerators", detail: "Freshness, thoughtfully kept", image: "https://media3.bsh-group.com/Product_Shots/5120x/28779808_CTC39K22AI_STP_def.webp" },
-  { number: "03", name: "Dishwashers", detail: "A smarter way to clean", image: "https://media3.bsh-group.com/Product_Shots/5120x/23349765_SMS6HMI01I_STP_def.webp" },
-  { number: "04", name: "Ovens & cooking", detail: "Made for inspired kitchens", image: "https://media3.bsh-group.com/Product_Shots/5120x/25497376_HJG852YG0I_STP_def.webp" },
-  { number: "05", name: "Hobs & chimneys", detail: "A considered cooking space", image: "https://media3.bsh-group.com/Product_Shots/5120x/MCSA02951098_PIB375FB5I_ElectricHob_Bosch_STP_def.webp" },
-  { number: "06", name: "Vacuum cleaners", detail: "A cleaner kind of home", image: "https://media3.bsh-group.com/Product_Shots/5120x/22966880__BCS71PETIN_def.webp" },
+  { number: "01", name: "Washing machines", detail: "Care for every fabric", image: productImage("WGA254ZSIN") },
+  { number: "02", name: "Refrigerators", detail: "Freshness, thoughtfully kept", image: productImage("CMC36K23VI") },
+  { number: "03", name: "Dishwashers", detail: "A smarter way to clean", image: productImage("SMS66GB01I") },
+  { number: "04", name: "Ovens & cooking", detail: "Made for inspired kitchens", image: productImage("HJG852YB0I") },
+  { number: "05", name: "Hobs & chimneys", detail: "A considered cooking space", image: productImage("PIB375FB5I") },
+  { number: "06", name: "Vacuum cleaners", detail: "A cleaner kind of home", image: productImage("BCS71PETIN") },
 ];
 
 const highlights = [
@@ -60,20 +64,13 @@ export default function HomePage() {
           </div>
           <div className="hero-footnote"><span className="small-dot" /> INDEPENDENTLY OWNED AUTHORISED RETAILER</div>
         </div>
-        <div className="hero-art" aria-label="Abstract editorial composition inspired by modern home appliances">
-          <div className="art-orbit orbit-one" />
-          <div className="art-orbit orbit-two" />
-          <div className="art-panel">
-            <div className="panel-top"><span>BOSCH</span><span>HOME EXPERIENCE / 01</span></div>
-            <div className="appliance-shape">
-              <div className="appliance-top"><i /><i /><i /></div>
-              <div className="appliance-door"><div className="door-glass"><div className="glass-reflection" /></div></div>
-              <div className="appliance-base" />
-            </div>
-            <div className="panel-bottom"><span>DESIGNED AROUND YOU</span><span>01 — 06</span></div>
+        <div className="hero-art hero-product-art" aria-label="Official Bosch home appliance product photography">
+          <div className="hero-photo-frame">
+            <img src={productImage("WGA254ZSIN")} alt="Bosch Series 6 front-loading washing machine" fetchPriority="high" />
+            <div className="hero-photo-label"><span>THE BOSCH COLLECTION</span><strong>Designed around everyday life.</strong></div>
           </div>
-          <div className="art-note"><span>01 /</span> Everyday, elevated.</div>
           <div className="hero-stamp"><span>THE</span><strong>BOSCH</strong><span>COLLECTION</span></div>
+          <div className="art-note"><span>01 /</span> Everyday, elevated.</div>
         </div>
         <div className="hero-index"><span>01</span><span className="index-rule" /><span>03</span></div>
       </section>
@@ -102,10 +99,13 @@ export default function HomePage() {
       </section>
 
       <section className="experience" id="experience">
-        <div className="experience-visual">
-          <div className="experience-ring" />
-          <div className="experience-type"><span>GOOD DESIGN</span><strong>IS FELT<br />EVERY DAY.</strong><span>BOSCH HOME APPLIANCES</span></div>
-          <div className="experience-caption">A considered choice for every corner of home.</div>
+        <div className="experience-visual experience-photo-visual">
+          <div className="experience-photo-grid">
+            <img className="experience-photo-main" src={productImage("CMC36K23VI")} alt="Bosch Series 6 refrigerator" loading="lazy" />
+            <img src={productImage("SMS66GB01I")} alt="Bosch Series 6 dishwasher" loading="lazy" />
+            <img src={productImage("HJG852YB0I")} alt="Bosch Series 6 built-in oven" loading="lazy" />
+          </div>
+          <div className="experience-photo-caption"><span>BUILT FOR EVERYDAY</span><strong>Bosch home appliances</strong></div>
         </div>
         <div className="experience-copy">
           <p className="eyebrow"><span className="eyebrow-line" /> THE RAJLAXMI EXPERIENCE</p>
