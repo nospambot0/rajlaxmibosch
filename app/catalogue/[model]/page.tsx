@@ -23,7 +23,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
           <p className="product-detail-summary">{product.summary}</p>
           <div className="product-highlights product-detail-highlights">{product.highlights.map((item) => <span key={item}>{item}</span>)}</div>
           <p className="product-enquiry-note">Ask Rajlaxmi Enterprises for current MRP, best available price, stock and delivery details.</p>
-          <div className="product-detail-actions"><a className="button button-dark" href={product.officialUrl} target="_blank" rel="noreferrer">View on Bosch ↗</a><a className="text-link" href="/catalogue">Explore more models →</a></div>
+          <div className="product-detail-actions"><a className="button button-dark" href={product.officialUrl} target="_blank" rel="noreferrer">View on Bosch ↗</a><a className="text-link" href="/catalogue">Explore more models →</a></div>\n          <p className="product-source-note">Manuals & product documents: <a href={product.documentsUrl} target="_blank" rel="noreferrer">find documents by model number on Bosch ↗</a></p>\n          <p className="product-source-note">Rajlaxmi pricing & availability: {product.retailer.availability === "enquiry" ? "Please enquire for local price and stock." : product.retailer.availability}</p>
           <p className="product-source-note">Product information checked against Bosch Home Appliances India on {product.sourceChecked}.</p>
         </div>
       </section>
