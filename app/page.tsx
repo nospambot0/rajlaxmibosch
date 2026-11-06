@@ -15,8 +15,6 @@ const highlights = [
   { number: "03", title: "Visit our showroom", text: "See selected appliances in person at Rajlaxmi Enterprises in Bhubaneswar." },
 ];
 
-"use client";
-
 export default function HomePage() {
   return (
     <main id="top">
