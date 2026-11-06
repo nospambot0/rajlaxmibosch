@@ -8,12 +8,26 @@ const formatRupees = (amount: number) => `₹${amount.toLocaleString("en-IN")}`;
 export default function CataloguePage() {
   const [activeCategory, setActiveCategory] = useState("All products");
   const [search, setSearch] = useState("");
-  const products = useMemo(() => catalogueProducts.filter((product) => {
-    const matchesCategory = activeCategory === "All products" || product.category === activeCategory;
-    const query = search.trim().toLowerCase();
-    const matchesSearch = !query || [product.name, product.model, product.category, product.summary].join(" ").toLowerCase().includes(query);
-    return matchesCategory && matchesSearch;
-  }), [activeCategory, search]);
+  const products = useMemo(() => {
+    const selectedCategory = activeCategory.trim().toLocaleLowerCase();
+    const query = search.trim().toLocaleLowerCase();
+
+    return catalogueProducts.filter((product) => {
+      // Category membership is determined only by the canonical category field.
+      const productCategory = product.category.trim().toLocaleLowerCase();
+      const matchesCategory = selectedCategory === "all products" || productCategory === selectedCategory;
+      const matchesSearch = !query || [product.name, product.model, product.category, product.summary]
+        .join(" ")
+        .toLocaleLowerCase()
+        .includes(query);
+      return matchesCategory && matchesSearch;
+    });
+  }, [activeCategory, search]);
+
+  const selectCategory = (category: string) => {
+    setActiveCategory(category);
+    setSearch("");
+  };
 
   return (
     <main className="catalogue-page">
@@ -33,7 +47,7 @@ export default function CataloguePage() {
           <label className="catalogue-search"><span>Search model or product</span><input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="e.g. WGA254IRIN" /></label>
         </div>
         <div className="catalogue-filters" aria-label="Product categories">
-          {catalogueCategories.map((category) => <button key={category} className={activeCategory === category ? "active" : ""} onClick={() => setActiveCategory(category)}>{category}</button>)}
+          {catalogueCategories.map((category) => <button type="button" key={category} aria-pressed={activeCategory === category} className={activeCategory === category ? "active" : ""} onClick={() => selectCategory(category)}>{category}</button>)}
         </div>
         <div className="catalogue-results-head"><span>{products.length} selected models</span><span>MODEL INFORMATION FROM BOSCH INDIA</span></div>
         {products.length ? <div className="product-grid">
