@@ -149,7 +149,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<Pr
         <div className="product-spec-groups">{specSections.map((section) => { const rows=verifiedSpecs.filter((spec)=>section.test(spec.label)); return rows.length ? <section className="product-spec-group" key={section.title}><h3>{section.title}</h3><dl className="product-spec-table">{rows.map((spec)=><div key={spec.label}><dt>{spec.label}</dt><dd>{spec.value}</dd></div>)}</dl></section> : null; })}</div>
       </section>
       <section className="product-warranty-note"><div><p className="eyebrow">BOSCH MANUFACTURER WARRANTY</p><h2>Warranty coverage, clearly explained.</h2><p>Warranty duration and covered components depend on the appliance category and, in some cases, the exact model. Confirm coverage against the product warranty card and Bosch’s current terms.</p></div><a className="text-link" href="/warranty">View Bosch warranty information →</a></section>
-      <footer className="catalogue-footer"><a href="/">rajlaxmi<span>.</span> ENTERPRISES</a><span>Independently owned authorised retailer · Serving Bhubaneswar & Cuttack</span><div className="catalogue-footer-links"><a href="/terms">Terms &amp; Conditions</a><a href="/warranty">Warranty Information</a><a href={product.officialUrl} target="_blank" rel="noreferrer">Official Bosch details ↗</a></div></footer>
+      <footer className="catalogue-footer"><a href="/">rajlaxmi<span>.</span> ENTERPRISES</a><span>Bosch Brand Store · Serving Bhubaneswar & Cuttack</span><div className="catalogue-footer-links"><a href="/terms">Terms &amp; Conditions</a><a href="/warranty">Warranty Information</a><a href={product.officialUrl} target="_blank" rel="noreferrer">Official Bosch details ↗</a></div></footer>
     </main>
   );
 }
