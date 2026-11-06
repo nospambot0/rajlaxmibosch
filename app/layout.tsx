@@ -4,15 +4,15 @@ import "./globals.css";
 export const metadata: Metadata = {
   metadataBase: new URL("https://rajlaxmibosch.com"),
   title: {
-    default: "Rajlaxmi Enterprises | Bosch Home Appliances in Bhubaneswar",
+    default: "Rajlaxmi Enterprises | Bosch Home Appliances | Bhubaneswar & Cuttack",
     template: "%s | Rajlaxmi Enterprises",
   },
   description:
-    "Explore Bosch home appliances at Rajlaxmi Enterprises, an authorised Bosch retailer in Bhubaneswar. Enquire about products, pricing and availability. Serving Cuttack and across Odisha.",
+    "Explore Bosch home appliances at Rajlaxmi Enterprises, an independently owned authorised retailer of Bosch home appliances serving Bhubaneswar and Cuttack. Enquire about products, pricing and availability.",
   openGraph: {
     title: "Rajlaxmi Enterprises | Bosch Home Appliances",
     description:
-      "Discover Bosch home appliances with guidance from Rajlaxmi Enterprises in Bhubaneswar, Odisha.",
+      "Discover Bosch home appliances with guidance from Rajlaxmi Enterprises, an independently owned authorised retailer serving Bhubaneswar and Cuttack, Odisha.",
     url: "https://rajlaxmibosch.com",
     siteName: "Rajlaxmi Enterprises",
     locale: "en_IN",

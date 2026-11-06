@@ -140,7 +140,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<Pr
         <div><p className="eyebrow"><span className="eyebrow-line" /> BOSCH PRODUCT DETAILS</p><h2 id="product-specs-title">Bosch {product.model}<br /><em>specifications.</em></h2><p className="product-spec-intro">Technical information and published product details for the Bosch {product.name}. Use the model number when enquiring about this appliance.</p></div>
         <dl className="product-spec-table">{verifiedSpecs.map((spec) => <div key={spec.label}><dt>{spec.label}</dt><dd>{spec.value}</dd></div>)}</dl>
       </section>
-      <footer className="catalogue-footer"><a href="/">rajlaxmi<span>.</span> ENTERPRISES</a><span>Independent authorised Bosch home appliances retailer · Bhubaneswar, Odisha</span><a href={product.officialUrl} target="_blank" rel="noreferrer">Official Bosch details ↗</a></footer>
+      <footer className="catalogue-footer"><a href="/">rajlaxmi<span>.</span> ENTERPRISES</a><span>Independently owned authorised retailer · Serving Bhubaneswar & Cuttack</span><a href={product.officialUrl} target="_blank" rel="noreferrer">Official Bosch details ↗</a></footer>
     </main>
   );
 }

@@ -24,8 +24,8 @@ export default function HomePage() {
     <main id="top">
       <div className="announcement">
         <span>RAJLAXMI ENTERPRISES</span>
-        <span className="announcement-center">Authorised Bosch Home Appliances Retailer</span>
-        <a href="#contact">Bhubaneswar, Odisha <span aria-hidden="true">↗</span></a>
+        <span className="announcement-center">INDEPENDENTLY OWNED AUTHORISED RETAILER</span>
+        <a href="#contact">Bhubaneswar &amp; Cuttack <span aria-hidden="true">↗</span></a>
       </div>
 
       <header className="site-header">
@@ -76,9 +76,9 @@ export default function HomePage() {
       </section>
 
       <section className="trust-strip" aria-label="Store highlights">
-        <div><span className="trust-mark">✳</span><p>Authorised Bosch<br />retailer</p></div>
+        <div><span className="trust-mark">✳</span><p>Independently owned<br />authorised retailer</p></div>
         <div><span className="trust-mark">⌖</span><p>Showroom in<br />Bhubaneswar</p></div>
-        <div><span className="trust-mark">↗</span><p>Serving Cuttack<br />and across Odisha</p></div>
+        <div><span className="trust-mark">↗</span><p>Serving Bhubaneswar<br />&amp; Cuttack</p></div>
         <div><span className="trust-mark">＋</span><p>Personal product<br />guidance</p></div>
       </section>
 
@@ -122,7 +122,7 @@ export default function HomePage() {
       <section className="location-section" id="about">
         <div className="location-inner">
           <div><p className="eyebrow"><span className="eyebrow-line" /> ROOTED IN ODISHA</p><h2>Your home.<br /><em>Our neighbourhood.</em></h2></div>
-          <div className="location-copy"><p>Visit Rajlaxmi Enterprises in Bhubaneswar for a more personal way to explore Bosch home appliances. We also welcome enquiries from Cuttack and customers across Odisha.</p><a className="button button-light" href="#contact">Connect with Rajlaxmi <span aria-hidden="true">↗</span></a></div>
+          <div className="location-copy"><p>Visit Rajlaxmi Enterprises in Bhubaneswar for a more personal way to explore Bosch home appliances. We serve customers in Bhubaneswar and Cuttack.</p><a className="button button-light" href="#contact">Connect with Rajlaxmi <span aria-hidden="true">↗</span></a></div>
           <div className="location-city"><span>BHUBANESWAR</span><i /> <span>CUTTACK</span><i /> <span>ODISHA</span></div>
         </div>
       </section>
@@ -133,8 +133,8 @@ export default function HomePage() {
       </section>
 
       <footer className="footer">
-        <div className="footer-main"><a className="wordmark footer-wordmark" href="/"><span className="wordmark-name">rajlaxmi<span>.</span></span><span className="wordmark-caption">ENTERPRISES · BOSCH HOME APPLIANCES</span></a><p>Thoughtful living, made simpler.<br />Bhubaneswar, Odisha · Serving across Odisha</p><a className="footer-top" href="#top" onClick={(event) => { event.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}>Back to top ↑</a></div>
-        <div className="footer-bottom"><span>© {new Date().getFullYear()} Rajlaxmi Enterprises</span><span>Independent authorised Bosch home appliances retailer.</span><span>Bosch is a registered trademark of its respective owner.</span></div>
+        <div className="footer-main"><a className="wordmark footer-wordmark" href="/"><span className="wordmark-name">rajlaxmi<span>.</span></span><span className="wordmark-caption">ENTERPRISES · BOSCH HOME APPLIANCES</span></a><p>Thoughtful living, made simpler.<br />Serving Bhubaneswar & Cuttack</p><a className="footer-top" href="#top" onClick={(event) => { event.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}>Back to top ↑</a></div>
+        <div className="footer-bottom"><span>© {new Date().getFullYear()} Rajlaxmi Enterprises</span><span>Independently owned authorised retailer of Bosch home appliances.</span><span>Bosch is a registered trademark of its respective owner.</span></div>
       </footer>
     </main>
   );
