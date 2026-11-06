@@ -211,3 +211,87 @@ h2{font-size:clamp(40px,4.6vw,61px);line-height:1.07;letter-spacing:-.06em;font-
 .detail-pricing{background:#eae9e3;padding:17px 19px;margin:25px 0}
 .detail-pricing>p{font-size:10px;line-height:1.7;color:#686a63;margin:10px 0 7px}
 .detail-pricing>a{font:8px var(--mono);color:var(--red)}
+
+
+/* Accessible, larger typography across the storefront */
+html { font-size: 16px; }
+body { font-size: 16px; line-height: 1.65; -webkit-font-smoothing: auto; }
+.announcement { font-size: 11px; min-height: 42px; height: auto; }
+.wordmark-caption, .bosch-brand-caption { font-size: 10px; }
+.desktop-nav { font-size: 15px; gap: 28px; }
+.header-cta, .text-link { font-size: 14px; }
+.eyebrow { font-size: 11px; }
+.hero-description { font-size: 17px; line-height: 1.8; }
+.button { font-size: 14px; padding: 17px 21px; }
+.hero-footnote, .hero-stamp, .hero-index { font-size: 10px; }
+.trust-strip p { font-size: 14px; line-height: 1.6; }
+.section-aside p, .location-copy p, .contact-content>p { font-size: 15px; line-height: 1.8; }
+.category-card-top, .category-card p, .catalogue-note { font-size: 11px; }
+.category-card h3 { font-size: 21px; }
+.experience-intro { font-size: 15px; line-height: 1.8; }
+.step-number, .step-arrow { font-size: 12px; }
+.step h3 { font-size: 16px; }
+.step p { font-size: 13px; line-height: 1.7; }
+.location-city { font-size: 10px; }
+.contact-small { font-size: 10px; }
+.footer-main>p { font-size: 13px; }
+.footer-top { font-size: 13px; }
+.footer-bottom { font-size: 10px; }
+.catalogue-topline { font-size: 10px; min-height: 46px; height: auto; }
+.catalogue-hero>p:not(.eyebrow) { font-size: 16px; line-height: 1.8; }
+.catalogue-meta { font-size: 10px; }
+.catalogue-search { font-size: 11px; }
+.catalogue-search input { font-size: 16px; }
+.catalogue-filters button { font-size: 12px; padding: 12px 15px; }
+.catalogue-results-head { font-size: 10px; }
+.product-card-meta { font-size: 9px; }
+.product-card h3 { font-size: 21px; }
+.product-card-copy>p { font-size: 14px; line-height: 1.7; }
+.product-highlights span { font-size: 11px; }
+.product-card-bottom { font-size: 11px; }
+.product-price-line, .detail-price-row { font-size: 13px; }
+.product-price-line>strong, .detail-price-row>strong { font-size: 15px; }
+.detail-pricing>p { font-size: 13px; }
+.detail-pricing>a { font-size: 10px; }
+.catalogue-empty>span { font-size: 11px; }
+.catalogue-empty p, .catalogue-empty a { font-size: 14px; }
+.catalogue-note-panel>p { font-size: 15px; line-height: 1.8; }
+.catalogue-source-panel>div:first-child>p:last-child { font-size: 14px; }
+.catalogue-source-list a { font-size: 14px; }
+.catalogue-source-list strong { font-size: 12px; }
+.catalogue-footer { font-size: 10px; }
+.catalogue-footer>a:first-child { font-size: 14px; }
+.product-detail-breadcrumb { font-size: 11px; }
+.product-model, .product-source-note { font-size: 11px; }
+.product-detail-summary { font-size: 16px; line-height: 1.8; }
+.product-enquiry-note { font-size: 14px; line-height: 1.75; }
+.product-spec-table>div { font-size: 14px; }
+@media(max-width:680px) {
+  body { font-size: 16px; }
+  .announcement { font-size: 9px; min-height: 36px; }
+  .wordmark-caption { font-size: 8px; }
+  .bosch-brand-caption { font-size: 7px; }
+  .header-cta { font-size: 12px; }
+  .hero-description { font-size: 16px; }
+  .hero-footnote { font-size: 9px; }
+  .trust-strip p { font-size: 13px; }
+  .section-aside p, .location-copy p, .contact-content>p { font-size: 15px; }
+  .category-card-top, .category-card p { font-size: 10px; }
+  .category-card h3 { font-size: 17px; }
+  .step h3 { font-size: 15px; }
+  .step p { font-size: 13px; }
+  .location-city { font-size: 9px; }
+  .footer-main>p { font-size: 13px; }
+  .footer-bottom { font-size: 9px; }
+  .catalogue-topline { font-size: 9px; min-height: 40px; }
+  .catalogue-hero>p:not(.eyebrow) { font-size: 15px; }
+  .catalogue-meta, .catalogue-results-head { font-size: 9px; }
+  .catalogue-search { font-size: 10px; }
+  .catalogue-filters button { font-size: 12px; }
+  .product-card-meta { font-size: 9px; }
+  .product-card h3 { font-size: 20px; }
+  .product-card-copy>p { font-size: 14px; }
+  .product-card-bottom { font-size: 11px; }
+  .product-detail-summary { font-size: 15px; }
+  .product-enquiry-note, .product-spec-table>div { font-size: 13px; }
+}
