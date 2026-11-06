@@ -1,12 +1,12 @@
 "use client";
 
 const categories = [
-  { number: "01", name: "Washing machines", detail: "Care for every fabric", icon: "◉" },
-  { number: "02", name: "Refrigerators", detail: "Freshness, thoughtfully kept", icon: "▥" },
-  { number: "03", name: "Dishwashers", detail: "A smarter way to clean", icon: "▤" },
-  { number: "04", name: "Ovens & cooking", detail: "Made for inspired kitchens", icon: "▦" },
-  { number: "05", name: "Hobs & chimneys", detail: "A considered cooking space", icon: "⌁" },
-  { number: "06", name: "Vacuum cleaners", detail: "A cleaner kind of home", icon: "◎" },
+  { number: "01", name: "Washing machines", detail: "Care for every fabric", image: "https://media3.bsh-group.com/Product_Shots/5120x/25796548_WGA254ZPIN_STP_def.webp" },
+  { number: "02", name: "Refrigerators", detail: "Freshness, thoughtfully kept", image: "https://media3.bsh-group.com/Product_Shots/5120x/28779808_CTC39K22AI_STP_def.webp" },
+  { number: "03", name: "Dishwashers", detail: "A smarter way to clean", image: "https://media3.bsh-group.com/Product_Shots/5120x/23349765_SMS6HMI01I_STP_def.webp" },
+  { number: "04", name: "Ovens & cooking", detail: "Made for inspired kitchens", image: "https://media3.bsh-group.com/Product_Shots/5120x/25497376_HJG852YG0I_STP_def.webp" },
+  { number: "05", name: "Hobs & chimneys", detail: "A considered cooking space", image: "https://media3.bsh-group.com/Product_Shots/5120x/MCSA02951098_PIB375FB5I_ElectricHob_Bosch_STP_def.webp" },
+  { number: "06", name: "Vacuum cleaners", detail: "A cleaner kind of home", image: "https://media3.bsh-group.com/Product_Shots/5120x/22966880__BCS71PETIN_def.webp" },
 ];
 
 const highlights = [
@@ -93,7 +93,7 @@ export default function HomePage() {
         <div className="category-grid">
           {categories.map((category) => (
             <a className="category-card" href={`/catalogue?category=${encodeURIComponent(category.name)}`} key={category.number}>
-              <div className="category-card-top"><span>{category.number} / 06</span><span className="category-icon" aria-hidden="true">{category.icon}</span></div>
+              <img className="category-card-image" src={category.image} alt="" loading="lazy" decoding="async" /><div className="category-card-shade" /><div className="category-card-top"><span>{category.number} / 06</span><span className="category-icon" aria-hidden="true">↗</span></div>
               <div className="category-card-bottom"><div><h3>{category.name}</h3><p>{category.detail}</p></div><span className="circle-arrow" aria-hidden="true">↗</span></div>
             </a>
           ))}

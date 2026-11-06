@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap');
 
-:root{--ink:#171816;--muted:#777a73;--paper:#f4f3ef;--white:#fff;--red:#d71920;--line:#dcdcd5;--serif:'Playfair Display',Georgia,serif;--sans:'DM Sans',Arial,sans-serif;--mono:'DM Mono',monospace}
+:root{--ink:#171816;--muted:#777a73;--paper:#f4f3ef;--white:#fff;--red:#d71920;--line:#dcdcd5;--serif:Georgia,'Times New Roman',serif;--sans:Arial,Helvetica,sans-serif;--mono:'Courier New',monospace}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
@@ -295,3 +295,19 @@ body { font-size: 16px; line-height: 1.65; -webkit-font-smoothing: auto; }
   .product-detail-summary { font-size: 15px; }
   .product-enquiry-note, .product-spec-table>div { font-size: 13px; }
 }
+
+
+/* Bosch product photography on category cards */
+.category-card{position:relative;isolation:isolate;overflow:hidden;background:#20221f!important;color:#fff;min-height:260px}
+.category-card-image{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center;z-index:-2;transition:transform .45s ease}
+.category-card-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(15,16,15,.12) 0%,rgba(15,16,15,.16) 35%,rgba(15,16,15,.84) 100%);z-index:-1}
+.category-card:hover .category-card-image{transform:scale(1.045)}
+.category-card-top,.category-card-bottom{position:relative;z-index:1}
+.category-card-top{color:#fff}
+.category-icon{font-size:24px;color:#fff}
+.category-card h3{color:#fff}
+.category-card p{color:#e3e3df}
+.circle-arrow{color:#fff;border-color:#ffffff80}
+.category-card:hover{background:#20221f!important}
+.catalogue-page .product-image img,.product-detail-image img{display:block}
+@media(prefers-reduced-motion:reduce){.category-card-image{transition:none}.category-card:hover .category-card-image{transform:none}}

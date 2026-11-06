@@ -39,7 +39,7 @@ export default function CataloguePage() {
         {products.length ? <div className="product-grid">
           {products.map((product, index) => <article className="product-card" key={product.id}>
             <a className="product-image" href={`/catalogue/${product.model.toLowerCase()}`}>
-              <img src={product.image} alt={product.imageAlt} loading={index > 1 ? "lazy" : "eager"} />
+              <img src={product.image} alt={product.imageAlt} loading="lazy" decoding="async" />
               <span className="product-image-cta">View product ↗</span>
             </a>
             <div className="product-card-copy">
