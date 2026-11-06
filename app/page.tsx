@@ -1,5 +1,7 @@
 "use client";
 
+import Link from "next/link";
+
 const categories = [
   { number: "01", name: "Washing machines", detail: "Care for every fabric", icon: "◉" },
   { number: "02", name: "Refrigerators", detail: "Freshness, thoughtfully kept", icon: "▥" },
@@ -92,10 +94,10 @@ export default function HomePage() {
         </div>
         <div className="category-grid">
           {categories.map((category) => (
-            <a className="category-card" href={`/catalogue?category=${encodeURIComponent(category.name)}`} key={category.number}>
+            <Link className="category-card" href={`/catalogue?category=${encodeURIComponent(category.name)}`} key={category.number} prefetch={false}>
               <div className="category-card-top"><span>{category.number} / 06</span><span className="category-icon" aria-hidden="true">{category.icon}</span></div>
               <div className="category-card-bottom"><div><h3>{category.name}</h3><p>{category.detail}</p></div><span className="circle-arrow" aria-hidden="true">↗</span></div>
-            </a>
+            </Link>
           ))}
         </div>
         <p className="catalogue-note">Explore selected Bosch models with official product imagery and specifications. Pricing and stock are confirmed directly by Rajlaxmi Enterprises.</p><a className="text-link catalogue-link" href="/catalogue">View selected products <span aria-hidden="true">→</span></a>
