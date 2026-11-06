@@ -200,3 +200,14 @@ h2{font-size:clamp(40px,4.6vw,61px);line-height:1.07;letter-spacing:-.06em;font-
 .product-spec-table span{color:#686a63}
 .product-spec-table strong{text-align:right;font-weight:500}
 @media(max-width:680px){.catalogue-source-panel{padding:60px 6%;grid-template-columns:1fr;gap:25px}.product-detail-breadcrumb{padding:17px 6%;font-size:8px}.product-detail-layout{padding:20px 6% 65px;grid-template-columns:1fr;gap:30px}.product-detail-image{min-height:340px;padding:25px}.product-detail-image img{height:300px}.product-detail-copy h1{font-size:42px}.product-spec-section{padding:60px 6%;grid-template-columns:1fr;gap:25px}.product-spec-table>div{font-size:10px}}
+
+
+/* Separate manufacturer MRP from retailer offer pricing */
+.product-price-block,.detail-pricing{border-top:1px solid #d1d1c9;border-bottom:1px solid #d1d1c9;padding:12px 0;margin:18px 0}
+.product-price-line,.detail-price-row{display:flex;justify-content:space-between;align-items:baseline;gap:12px;padding:6px 0;font-size:10px}
+.product-price-line>span,.detail-price-row>span{color:#686a63}
+.product-price-line>strong,.detail-price-row>strong{font-size:12px;font-weight:600;text-align:right;color:var(--ink)}
+.product-price-line.retailer-price>strong{color:var(--red)}
+.detail-pricing{background:#eae9e3;padding:17px 19px;margin:25px 0}
+.detail-pricing>p{font-size:10px;line-height:1.7;color:#686a63;margin:10px 0 7px}
+.detail-pricing>a{font:8px var(--mono);color:var(--red)}

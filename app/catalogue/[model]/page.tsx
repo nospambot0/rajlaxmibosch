@@ -1,6 +1,8 @@
 import { notFound } from "next/navigation";
 import { catalogueProducts } from "../../../data/catalogue";
 
+const formatRupees = (amount: number) => `₹${amount.toLocaleString("en-IN")}`;
+
 export function generateStaticParams() {
   return catalogueProducts.map((product) => ({ model: product.model.toLowerCase() }));
 }
@@ -22,10 +24,15 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
           <h1>{product.name}</h1>
           <p className="product-detail-summary">{product.summary}</p>
           <div className="product-highlights product-detail-highlights">{product.highlights.map((item) => <span key={item}>{item}</span>)}</div>
-          <p className="product-enquiry-note">Ask Rajlaxmi Enterprises for current MRP, best available price, stock and delivery details.</p>
+          <section className="detail-pricing" aria-label="Product pricing">
+            <div className="detail-price-row"><span>Bosch MRP</span><strong>{product.manufacturerMrp != null ? formatRupees(product.manufacturerMrp) : "MRP on enquiry"}</strong></div>
+            <div className="detail-price-row"><span>Rajlaxmi offer price</span><strong>Enquire for price</strong></div>
+            <p>Ask Rajlaxmi Enterprises for our current offer, stock and delivery details.</p>
+            {product.manufacturerMrpSourceUrl && <a href={product.manufacturerMrpSourceUrl} target="_blank" rel="noreferrer">Bosch MRP source ↗</a>}
+          </section>
           <div className="product-detail-actions"><a className="button button-dark" href={product.officialUrl} target="_blank" rel="noreferrer">View on Bosch ↗</a><a className="text-link" href="/catalogue">Explore more models →</a></div>
           <p className="product-source-note">Manuals & product documents: <a href={product.documentsUrl} target="_blank" rel="noreferrer">find documents by model number on Bosch ↗</a></p>
-          <p className="product-source-note">Rajlaxmi pricing & availability: {product.retailer.availability === "enquiry" ? "Please enquire for local price and stock." : product.retailer.availability}</p>
+          <p className="product-source-note">Rajlaxmi stock & delivery: {product.retailer.availability === "enquiry" ? "Please enquire for local availability." : product.retailer.availability}</p>
           <p className="product-source-note">Product information checked against Bosch Home Appliances India on {product.sourceChecked}.</p>
         </div>
       </section>

@@ -3,6 +3,8 @@
 import { useMemo, useState } from "react";
 import { catalogueCategories, catalogueProducts, officialCategorySources } from "../../data/catalogue";
 
+const formatRupees = (amount: number) => `₹${amount.toLocaleString("en-IN")}`;
+
 export default function CataloguePage() {
   const [activeCategory, setActiveCategory] = useState("All products");
   const [search, setSearch] = useState("");
@@ -22,8 +24,8 @@ export default function CataloguePage() {
       <section className="catalogue-hero">
         <p className="eyebrow"><span className="eyebrow-line" /> THE BOSCH COLLECTION</p>
         <h1>Explore the<br /><em>catalogue.</em></h1>
-        <p>Discover selected Bosch home appliances with product details sourced from Bosch Home Appliances India. Ask Rajlaxmi Enterprises for current pricing and local availability.</p>
-        <div className="catalogue-meta"><span>OFFICIAL PRODUCT INFORMATION</span><span>LOCAL PRICE & STOCK ON ENQUIRY</span></div>
+        <p>Discover selected Bosch home appliances with product details sourced from Bosch Home Appliances India. Compare published Bosch MRPs and enquire with Rajlaxmi Enterprises for our current offer price and local availability.</p>
+        <div className="catalogue-meta"><span>OFFICIAL PRODUCT INFORMATION</span><span>RAJLAXMI OFFER PRICE ON ENQUIRY</span></div>
       </section>
       <section className="catalogue-browser">
         <div className="catalogue-toolbar">
@@ -45,12 +47,16 @@ export default function CataloguePage() {
               <h3>{product.name}</h3>
               <p>{product.summary}</p>
               <div className="product-highlights">{product.highlights.slice(0, 3).map((item) => <span key={item}>{item}</span>)}</div>
-              <div className="product-card-bottom"><span>Price & availability on enquiry</span><a href={`/catalogue/${product.model.toLowerCase()}`}>View details ↗</a></div>
+              <div className="product-price-block">
+                <div className="product-price-line"><span>Bosch MRP</span><strong>{product.manufacturerMrp != null ? formatRupees(product.manufacturerMrp) : "MRP on enquiry"}</strong></div>
+                <div className="product-price-line retailer-price"><span>Rajlaxmi offer price</span><strong>Enquire for price</strong></div>
+              </div>
+              <div className="product-card-bottom"><span>Stock & delivery on enquiry</span><a href={`/catalogue/${product.model.toLowerCase()}`}>View details ↗</a></div>
             </div>
           </article>)}
         </div> : <div className="catalogue-empty"><span>MORE BOSCH MODELS COMING INTO THE CATALOGUE</span><p>We are organising the full range category by category. Contact Rajlaxmi Enterprises for help finding a model.</p><a href="/">Back to home ↗</a></div>}
       </section>
-      <section className="catalogue-source-panel"><div><p className="eyebrow"><span className="eyebrow-line" /> OFFICIAL BOSCH RANGE</p><h2>More to<br /><em>discover.</em></h2><p>These official Bosch India category pages show the broader range. We are adding model cards in verified batches; category totals are indicative and can change as Bosch updates its catalogue.</p></div><div className="catalogue-source-list">{officialCategorySources.map((source) => <a key={source.name} href={source.url} target="_blank" rel="noreferrer"><span>{source.name}</span><strong>{source.count} <small>listed</small> ↗</strong></a>)}</div></section><section className="catalogue-note-panel"><div><p className="eyebrow"><span className="eyebrow-line" /> A NOTE ON PRICING</p><h2>Clear details.<br /><em>Personal guidance.</em></h2></div><p>Product names, images and technical details are linked to Bosch Home Appliances India. Prices and stock are not copied from Bosch’s online shop: Rajlaxmi Enterprises will confirm its own current MRP, offers, availability and delivery information directly.</p></section>
+      <section className="catalogue-source-panel"><div><p className="eyebrow"><span className="eyebrow-line" /> OFFICIAL BOSCH RANGE</p><h2>More to<br /><em>discover.</em></h2><p>These official Bosch India category pages show the broader range. We are adding model cards in verified batches; category totals are indicative and can change as Bosch updates its catalogue.</p></div><div className="catalogue-source-list">{officialCategorySources.map((source) => <a key={source.name} href={source.url} target="_blank" rel="noreferrer"><span>{source.name}</span><strong>{source.count} <small>listed</small> ↗</strong></a>)}</div></section><section className="catalogue-note-panel"><div><p className="eyebrow"><span className="eyebrow-line" /> A NOTE ON PRICING</p><h2>Clear details.<br /><em>Personal guidance.</em></h2></div><p>Bosch MRP is shown separately wherever it has been verified from Bosch Home Appliances India. Where a published MRP has not been verified, the catalogue says “MRP on enquiry”. Rajlaxmi Enterprises’ own offer price, stock and delivery are confirmed directly by the retailer.</p></section>
       <footer className="catalogue-footer"><a href="/">rajlaxmi<span>.</span> ENTERPRISES</a><span>Independent authorised Bosch home appliances retailer · Bhubaneswar, Odisha</span><a href="https://www.bosch-home.in/en" target="_blank" rel="noreferrer">Bosch Home Appliances ↗</a></footer>
     </main>
   );
