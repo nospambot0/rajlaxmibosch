@@ -53,7 +53,6 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             {product.manufacturerMrpSourceUrl && <a href={product.manufacturerMrpSourceUrl} target="_blank" rel="noreferrer">Bosch MRP source ↗</a>}
           </section>
           <div className="product-detail-actions"><a className="button button-dark" href={product.officialUrl} target="_blank" rel="noreferrer">View on Bosch ↗</a><a className="text-link" href="/catalogue">Explore more models →</a></div>
-          <p className="product-source-note">Manuals & product documents: <a href={product.documentsUrl} target="_blank" rel="noreferrer">find documents by model number on Bosch ↗</a></p>
           <p className="product-source-note">Rajlaxmi stock & delivery: {product.retailer.availability === "enquiry" ? "Please enquire for local availability." : product.retailer.availability}</p>
           <p className="product-source-note">Product information checked against Bosch Home Appliances India on {product.sourceChecked}.</p>
         </div>
