@@ -63,7 +63,7 @@ export default function CataloguePage() {
               <div className="product-highlights">{product.highlights.slice(0, 3).map((item) => <span key={item}>{item}</span>)}</div>
               <div className="product-price-block">
                 <div className="product-price-line"><span>Bosch MRP</span><strong>{product.manufacturerMrp != null ? formatRupees(product.manufacturerMrp) : "MRP on enquiry"}</strong></div>
-                <div className="product-price-line retailer-price"><span>Rajlaxmi offer price</span><strong>Enquire for price</strong></div>
+                <div className="product-price-line retailer-price"><span>Rajlaxmi Enterprise offer price</span><strong>Enquire for price</strong></div>
               </div>
               <div className="product-card-bottom"><span>Stock & delivery on enquiry</span><a href={`/catalogue/${product.model.toLowerCase()}`}>View details ↗</a></div>
             </div>

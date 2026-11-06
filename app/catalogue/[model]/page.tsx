@@ -53,7 +53,7 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
           <div className="product-highlights product-detail-highlights">{product.highlights.map((item) => <span key={item}>{item}</span>)}</div>
           <section className="detail-pricing" aria-label="Product pricing">
             <div className="detail-price-row"><span>Bosch MRP</span><strong>{product.manufacturerMrp != null ? formatRupees(product.manufacturerMrp) : "MRP on enquiry"}</strong></div>
-            <div className="detail-price-row"><span>Rajlaxmi offer price</span><strong>Enquire for price</strong></div>
+            <div className="detail-price-row"><span>Rajlaxmi Enterprise offer price</span><strong>Enquire for price</strong></div>
             <p>Ask Rajlaxmi Enterprises for our current offer, stock and delivery details.</p>
           </section>
           <div className="product-detail-actions"><button className="button button-dark" type="button" disabled>Enquire for Price</button><a className="text-link" href="/catalogue">Explore more models →</a></div>
