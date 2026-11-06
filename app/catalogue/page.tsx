@@ -1,18 +1,11 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useMemo, useState } from "react";
 import { catalogueCategories, catalogueProducts, officialCategorySources } from "../../data/catalogue";
 
 export default function CataloguePage() {
   const [activeCategory, setActiveCategory] = useState("All products");
   const [search, setSearch] = useState("");
-
-  useEffect(() => {
-    const requestedCategory = new URLSearchParams(window.location.search).get("category");
-    if (requestedCategory && catalogueCategories.includes(requestedCategory)) {
-      setActiveCategory(requestedCategory);
-    }
-  }, []);
   const products = useMemo(() => catalogueProducts.filter((product) => {
     const matchesCategory = activeCategory === "All products" || product.category === activeCategory;
     const query = search.trim().toLowerCase();
