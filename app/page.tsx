@@ -48,6 +48,16 @@ export default function HomePage() {
           <a href="#contact">Visit & enquire</a>
         </nav>
         <a className="header-cta" href="#contact">Talk to our team <span aria-hidden="true">↗</span></a>
+        <details className="mobile-nav-dropdown">
+          <summary>Menu <span aria-hidden="true">⌄</span></summary>
+          <nav aria-label="Mobile navigation">
+            <a href="/catalogue">Catalogue</a>
+            <a href="/#collections">Collections</a>
+            <a href="/#experience">The experience</a>
+            <a href="/#about">About us</a>
+            <a href="/#contact">Visit &amp; enquire</a>
+          </nav>
+        </details>
       </header>
 
       <section className="hero">
