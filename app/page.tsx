@@ -134,7 +134,7 @@ export default function HomePage() {
 
       <footer className="footer">
         <div className="footer-main"><a className="wordmark footer-wordmark" href="/"><span className="wordmark-name">rajlaxmi<span>.</span></span><span className="wordmark-caption">ENTERPRISES · BOSCH HOME APPLIANCES</span></a><p>Thoughtful living, made simpler.<br />Serving Bhubaneswar & Cuttack</p><a className="footer-top" href="#top" onClick={(event) => { event.preventDefault(); window.scrollTo({ top: 0, behavior: "smooth" }); }}>Back to top ↑</a></div>
-        <div className="footer-bottom"><span>© {new Date().getFullYear()} Rajlaxmi Enterprises</span><span>Independently owned authorised retailer of Bosch home appliances.</span><span>Bosch is a registered trademark of its respective owner.</span></div>
+        <div className="footer-bottom"><span>© {new Date().getFullYear()} Rajlaxmi Enterprises</span><span>Independently owned authorised retailer of Bosch home appliances.</span><span className="footer-legal-links"><a href="/terms">Terms &amp; Conditions</a><a href="/warranty">Warranty Information</a></span><span>Bosch is a registered trademark of its respective owner.</span></div>
       </footer>
     </main>
   );

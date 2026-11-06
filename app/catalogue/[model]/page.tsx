@@ -5,6 +5,14 @@ import ProductGallery from "./product-gallery";
 
 const formatRupees = (amount: number) => `₹${amount.toLocaleString("en-IN")}`;
 const siteUrl = "https://rajlaxmibosch.com";
+const specSections = [
+ {title:"General",test:(s:string)=>!/(dimension|size|weight|cool|refriger|freez|connect|wifi|wi-fi|bluetooth|app|home.?connect|feature|function|technology|programme|program|mode)/i.test(s)},
+ {title:"Size and weight",test:(s:string)=>/(dimension|size|weight|height|width|depth)/i.test(s)},
+ {title:"Specific Features",test:(s:string)=>/(feature|function|technology|programme|program|mode)/i.test(s)},
+ {title:"Cooling",test:(s:string)=>/(cool|refriger|freshness|temperature)/i.test(s)},
+ {title:"Freezing",test:(s:string)=>/(freez|freezer)/i.test(s)},
+ {title:"Connectivity",test:(s:string)=>/(connect|wifi|wi-fi|bluetooth|app|home.?connect)/i.test(s)},
+];
 
 export const revalidate = 86400;
 
@@ -137,10 +145,11 @@ export default async function ProductDetailPage({ params }: { params: Promise<Pr
         </div>
       </section>
       <section className="product-spec-section" aria-labelledby="product-specs-title">
-        <div><p className="eyebrow"><span className="eyebrow-line" /> BOSCH PRODUCT DETAILS</p><h2 id="product-specs-title">Bosch {product.model}<br /><em>specifications.</em></h2><p className="product-spec-intro">Technical information and published product details for the Bosch {product.name}. Use the model number when enquiring about this appliance.</p></div>
-        <dl className="product-spec-table">{verifiedSpecs.map((spec) => <div key={spec.label}><dt>{spec.label}</dt><dd>{spec.value}</dd></div>)}</dl>
+        <div><p className="eyebrow"><span className="eyebrow-line" /> BOSCH PRODUCT DETAILS</p><h2 id="product-specs-title">Bosch {product.model}<br /><em>specifications.</em></h2><p className="product-spec-intro">Published technical information for the Bosch {product.name}. Groups appear only when model-specific information is available; unlisted values are not assumed.</p></div>
+        <div className="product-spec-groups">{specSections.map((section) => { const rows=verifiedSpecs.filter((spec)=>section.test(spec.label)); return rows.length ? <section className="product-spec-group" key={section.title}><h3>{section.title}</h3><dl className="product-spec-table">{rows.map((spec)=><div key={spec.label}><dt>{spec.label}</dt><dd>{spec.value}</dd></div>)}</dl></section> : null; })}</div>
       </section>
-      <footer className="catalogue-footer"><a href="/">rajlaxmi<span>.</span> ENTERPRISES</a><span>Independently owned authorised retailer · Serving Bhubaneswar & Cuttack</span><a href={product.officialUrl} target="_blank" rel="noreferrer">Official Bosch details ↗</a></footer>
+      <section className="product-warranty-note"><div><p className="eyebrow">BOSCH MANUFACTURER WARRANTY</p><h2>Warranty coverage, clearly explained.</h2><p>Warranty duration and covered components depend on the appliance category and, in some cases, the exact model. Confirm coverage against the product warranty card and Bosch’s current terms.</p></div><a className="text-link" href="/warranty">View Bosch warranty information →</a></section>
+      <footer className="catalogue-footer"><a href="/">rajlaxmi<span>.</span> ENTERPRISES</a><span>Independently owned authorised retailer · Serving Bhubaneswar & Cuttack</span><div className="catalogue-footer-links"><a href="/terms">Terms &amp; Conditions</a><a href="/warranty">Warranty Information</a><a href={product.officialUrl} target="_blank" rel="noreferrer">Official Bosch details ↗</a></div></footer>
     </main>
   );
 }

@@ -1,0 +1,4 @@
+import type { MetadataRoute } from "next";
+import { catalogueProducts } from "../data/catalogue";
+const siteUrl="https://rajlaxmibosch.com";
+export default function sitemap():MetadataRoute.Sitemap{const lastModified=new Date("2026-11-07T00:00:00.000Z");return [{url:siteUrl,lastModified,changeFrequency:"weekly",priority:1},{url:`${siteUrl}/catalogue`,lastModified,changeFrequency:"daily",priority:.9},{url:`${siteUrl}/terms`,lastModified,changeFrequency:"yearly",priority:.3},{url:`${siteUrl}/warranty`,lastModified,changeFrequency:"monthly",priority:.6},...catalogueProducts.map(product=>({url:`${siteUrl}/catalogue/${product.model.toLowerCase()}`,lastModified,changeFrequency:"weekly" as const,priority:.7}))];}
