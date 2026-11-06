@@ -50,7 +50,6 @@ export default async function ProductDetailPage({ params }: { params: Promise<{ 
             <div className="detail-price-row"><span>Bosch MRP</span><strong>{product.manufacturerMrp != null ? formatRupees(product.manufacturerMrp) : "MRP on enquiry"}</strong></div>
             <div className="detail-price-row"><span>Rajlaxmi offer price</span><strong>Enquire for price</strong></div>
             <p>Ask Rajlaxmi Enterprises for our current offer, stock and delivery details.</p>
-            {product.manufacturerMrpSourceUrl && <a href={product.manufacturerMrpSourceUrl} target="_blank" rel="noreferrer">Bosch MRP source ↗</a>}
           </section>
           <div className="product-detail-actions"><a className="button button-dark" href={product.officialUrl} target="_blank" rel="noreferrer">View on Bosch ↗</a><a className="text-link" href="/catalogue">Explore more models →</a></div>
           <p className="product-source-note">Rajlaxmi stock & delivery: {product.retailer.availability === "enquiry" ? "Please enquire for local availability." : product.retailer.availability}</p>
