@@ -1,3 +1,5 @@
+"use client";
+
 const categories = [
   { number: "01", name: "Washing machines", detail: "Care for every fabric", icon: "◉" },
   { number: "02", name: "Refrigerators", detail: "Freshness, thoughtfully kept", icon: "▥" },
