@@ -12,10 +12,93 @@ export type CatalogueProduct = {
   highlights: string[];
   specs: { label: string; value: string }[];
   source: string;
-  sourceChecked: string;\n  documentsUrl: string;\n  retailer: { mrp: number | null; offerPrice: number | null; availability: "enquiry" | "in-stock" | "out-of-stock" };
+  sourceChecked: string;
+  documentsUrl: string;
+  retailer: { mrp: number | null; offerPrice: number | null; availability: "enquiry" | "in-stock" | "out-of-stock" };
 };
 
 export const catalogueProducts: CatalogueProduct[] = [
+  {
+    id: "wga244zpin",
+    name: "Series 6 front-loading washing machine 9 kg",
+    model: "WGA244ZPIN",
+    category: "Washing machines",
+    categoryLabel: "Laundry",
+    series: "Series 6",
+    summary: "9 kg front-loading washer with 1400 rpm spin speed, Anti Stain, SpeedPerfect and Reload.",
+    image: "https://media3.bsh-group.com/Product_Shots/5120x/24491159_WGA244ZPIN_STP_def.webp",
+    imageAlt: "Bosch Series 6 WGA244ZPIN front-loading washing machine",
+    officialUrl: "https://www.bosch-home.in/en/product/washer-dryer/washing-machines/front-loading-washing-machines/WGA244ZPIN",
+    highlights: ["9 kg capacity", "1400 rpm spin speed", "Anti Stain", "Reload function"],
+    specs: [
+      { label: "Capacity", value: "9 kg" },
+      { label: "Maximum spin speed", value: "1400 rpm" },
+      { label: "Dimensions (H × W × D)", value: "848 × 598 × 590 mm" },
+      { label: "Drum volume", value: "60 litres" },
+      { label: "Noise level (wash)", value: "54 dB(A)" },
+      { label: "Home Connect", value: "No" },
+      { label: "Reload function", value: "Yes" },
+      { label: "Water protection", value: "Multiple water protection" }
+    ],
+    source: "Bosch Home Appliances India product page",
+    sourceChecked: "2026-11-06",
+    documentsUrl: "https://www.bosch-home.in/service/get-support/manual-search",
+    retailer: { mrp: null, offerPrice: null, availability: "enquiry" }
+  },
+  {
+    id: "sms6hmi01i",
+    name: "Series 6 freestanding dishwasher 60 cm",
+    model: "SMS6HMI01I",
+    category: "Dishwashers",
+    categoryLabel: "Kitchen",
+    series: "Series 6",
+    summary: "Freestanding 60 cm dishwasher with 15 place settings, six programmes, heat-exchanger drying and Home Connect.",
+    image: "https://media3.bsh-group.com/Product_Shots/5120x/23349765_SMS6HMI01I_STP_def.webp",
+    imageAlt: "Bosch Series 6 SMS6HMI01I freestanding dishwasher",
+    officialUrl: "https://www.bosch-home.in/en/product/dishwashers/free-standing-dishwashers/free-standing-dishwashers-with-60cm-width/SMS6HMI01I",
+    highlights: ["15 place settings", "6 programmes", "Home Connect", "Extra Clean Zone"],
+    specs: [
+      { label: "Installation", value: "Freestanding with built-under possibility" },
+      { label: "Place settings", value: "15" },
+      { label: "Programmes", value: "6" },
+      { label: "Water consumption", value: "9 litres" },
+      { label: "Dimensions (H × W × D)", value: "845 × 600 × 600 mm" },
+      { label: "Drying system", value: "Heat exchanger" },
+      { label: "Cutlery system", value: "Third rack / cutlery drawer" },
+      { label: "Home Connect", value: "Yes" }
+    ],
+    source: "Bosch Home Appliances India product page",
+    sourceChecked: "2026-11-06",
+    documentsUrl: "https://www.bosch-home.in/service/get-support/manual-search",
+    retailer: { mrp: null, offerPrice: null, availability: "enquiry" }
+  },
+  {
+    id: "ctc35s22vi",
+    name: "Series 4 top-freezer fridge-freezer",
+    model: "CTC35S22VI",
+    category: "Refrigerators",
+    categoryLabel: "Cooling",
+    series: "Series 4",
+    summary: "Freestanding top-freezer fridge-freezer, 175 cm tall, with Total No Frost and VitaFresh.",
+    image: "https://media3.bsh-group.com/Product_Shots/5120x/28043065_CTC35S22VI_STP_def.webp",
+    imageAlt: "Bosch Series 4 CTC35S22VI silver top-freezer fridge-freezer",
+    officialUrl: "https://www.bosch-home.in/en/product/fridges-freezers/fridgefreezers/free-standing-top-freezers/CTC35S22VI",
+    highlights: ["Total No Frost", "VitaFresh", "175 cm height", "Silver finish"],
+    specs: [
+      { label: "Type", value: "Freestanding top-freezer fridge-freezer" },
+      { label: "Dimensions (H × W)", value: "175 × 67 cm" },
+      { label: "Cooling", value: "Total No Frost" },
+      { label: "Freshness system", value: "VitaFresh" },
+      { label: "Home Connect", value: "No" },
+      { label: "Colour", value: "Fine steel / silver" },
+      { label: "Origin", value: "Made in India" }
+    ],
+    source: "Bosch Home Appliances India product page",
+    sourceChecked: "2026-11-06",
+    documentsUrl: "https://www.bosch-home.in/service/get-support/manual-search",
+    retailer: { mrp: null, offerPrice: null, availability: "enquiry" }
+  },
+
   {
     id: "wga254irin",
     name: "Series 6 front-loading washing machine 10 kg",
@@ -37,7 +120,9 @@ export const catalogueProducts: CatalogueProduct[] = [
       { label: "Finish", value: "Cast iron grey" }
     ],
     source: "Bosch Home Appliances India product page",
-    sourceChecked: "2026-11-06",\n    documentsUrl: "https://www.bosch-home.in/service/get-support/manual-search",\n    retailer: { mrp: null, offerPrice: null, availability: "enquiry" }
+    sourceChecked: "2026-11-06",
+    documentsUrl: "https://www.bosch-home.in/service/get-support/manual-search",
+    retailer: { mrp: null, offerPrice: null, availability: "enquiry" }
   },
   {
     id: "sms6iki01i",
@@ -61,7 +146,9 @@ export const catalogueProducts: CatalogueProduct[] = [
       { label: "Finish", value: "Brushed steel anti-fingerprint" }
     ],
     source: "Bosch Home Appliances India product page",
-    sourceChecked: "2026-11-06",\n    documentsUrl: "https://www.bosch-home.in/service/get-support/manual-search",\n    retailer: { mrp: null, offerPrice: null, availability: "enquiry" }
+    sourceChecked: "2026-11-06",
+    documentsUrl: "https://www.bosch-home.in/service/get-support/manual-search",
+    retailer: { mrp: null, offerPrice: null, availability: "enquiry" }
   },
   {
     id: "ctc39l01pi",
@@ -84,7 +171,9 @@ export const catalogueProducts: CatalogueProduct[] = [
       { label: "Finish", value: "Dark grey metallic" }
     ],
     source: "Bosch Home Appliances India product page",
-    sourceChecked: "2026-11-06",\n    documentsUrl: "https://www.bosch-home.in/service/get-support/manual-search",\n    retailer: { mrp: null, offerPrice: null, availability: "enquiry" }
+    sourceChecked: "2026-11-06",
+    documentsUrl: "https://www.bosch-home.in/service/get-support/manual-search",
+    retailer: { mrp: null, offerPrice: null, availability: "enquiry" }
   },
 
   {
@@ -107,7 +196,9 @@ export const catalogueProducts: CatalogueProduct[] = [
       { label: "Colour", value: "Dark lake" }
     ],
     source: "Bosch Home Appliances India product page",
-    sourceChecked: "2026-11-06",\n    documentsUrl: "https://www.bosch-home.in/service/get-support/manual-search",\n    retailer: { mrp: null, offerPrice: null, availability: "enquiry" }
+    sourceChecked: "2026-11-06",
+    documentsUrl: "https://www.bosch-home.in/service/get-support/manual-search",
+    retailer: { mrp: null, offerPrice: null, availability: "enquiry" }
   },
   {
     id: "sms46ki03i",
@@ -130,7 +221,9 @@ export const catalogueProducts: CatalogueProduct[] = [
       { label: "Finish", value: "Brushed steel anti-fingerprint" }
     ],
     source: "Bosch Home Appliances India product page",
-    sourceChecked: "2026-11-06",\n    documentsUrl: "https://www.bosch-home.in/service/get-support/manual-search",\n    retailer: { mrp: null, offerPrice: null, availability: "enquiry" }
+    sourceChecked: "2026-11-06",
+    documentsUrl: "https://www.bosch-home.in/service/get-support/manual-search",
+    retailer: { mrp: null, offerPrice: null, availability: "enquiry" }
   },
   {
     id: "ctc39k22ai",
@@ -152,7 +245,9 @@ export const catalogueProducts: CatalogueProduct[] = [
       { label: "Origin", value: "Made in India" }
     ],
     source: "Bosch Home Appliances India product page",
-    sourceChecked: "2026-11-06",\n    documentsUrl: "https://www.bosch-home.in/service/get-support/manual-search",\n    retailer: { mrp: null, offerPrice: null, availability: "enquiry" }
+    sourceChecked: "2026-11-06",
+    documentsUrl: "https://www.bosch-home.in/service/get-support/manual-search",
+    retailer: { mrp: null, offerPrice: null, availability: "enquiry" }
   },
   {
     id: "hjg852ygoi",
@@ -174,7 +269,9 @@ export const catalogueProducts: CatalogueProduct[] = [
       { label: "Connection rating", value: "3600 W" }
     ],
     source: "Bosch Home Appliances India product page",
-    sourceChecked: "2026-11-06",\n    documentsUrl: "https://www.bosch-home.in/service/get-support/manual-search",\n    retailer: { mrp: null, offerPrice: null, availability: "enquiry" }
+    sourceChecked: "2026-11-06",
+    documentsUrl: "https://www.bosch-home.in/service/get-support/manual-search",
+    retailer: { mrp: null, offerPrice: null, availability: "enquiry" }
   },
   {
     id: "bcs71petin",
@@ -195,7 +292,9 @@ export const catalogueProducts: CatalogueProduct[] = [
       { label: "Battery", value: "Exchangeable 3.0 Ah" }
     ],
     source: "Bosch Home Appliances India product page",
-    sourceChecked: "2026-11-06",\n    documentsUrl: "https://www.bosch-home.in/service/get-support/manual-search",\n    retailer: { mrp: null, offerPrice: null, availability: "enquiry" }
+    sourceChecked: "2026-11-06",
+    documentsUrl: "https://www.bosch-home.in/service/get-support/manual-search",
+    retailer: { mrp: null, offerPrice: null, availability: "enquiry" }
   }
 ];
 
