@@ -2,6 +2,20 @@
 
 import { catalogueProducts } from "@/data/catalogue";
 
+const localBusinessSchema = {
+  "@context": "https://schema.org",
+  "@type": "Store",
+  name: "Rajlaxmi Enterprises",
+  alternateName: "Rajlaxmi Bosch Brand Store",
+  url: "https://rajlaxmibosch.com",
+  description: "Authorised Bosch home appliances retailer serving Bhubaneswar and Cuttack, Odisha, with a showroom in Bhubaneswar.",
+  brand: { "@type": "Brand", name: "Bosch" },
+  areaServed: [
+    { "@type": "City", name: "Bhubaneswar" },
+    { "@type": "City", name: "Cuttack" },
+  ],
+};
+
 const productImage = (model: string) => catalogueProducts.find((product) => product.model === model)?.image ?? "";
 
 const categories = [
@@ -21,7 +35,7 @@ const highlights = [
 
 export default function HomePage() {
   return (
-    <main id="top">
+    <main id="top">\n      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema).replace(/</g, "\\\\u003c") }} />
       <div className="announcement">
         <span>RAJLAXMI ENTERPRISES</span>
         <span className="announcement-center">BOSCH BRAND STORE</span>
