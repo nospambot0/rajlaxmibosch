@@ -8,7 +8,7 @@ export const metadata: Metadata = {
     template: "%s | Rajlaxmi Enterprises",
   },
   description:
-    "Explore Bosch home appliances at Rajlaxmi Enterprises, a Bosch Brand Store serving Bhubaneswar and Cuttack serving Bhubaneswar and Cuttack. Enquire about products, pricing and availability.",
+    "Explore genuine Bosch home appliances at Rajlaxmi Enterprises, serving Bhubaneswar and Cuttack, Odisha. Visit our Bhubaneswar showroom or enquire about product pricing, delivery and availability.",
   openGraph: {
     title: "Rajlaxmi Enterprises | Bosch Home Appliances",
     description:
