@@ -239,6 +239,34 @@ export default async function ProductDetailPage({ params }: { params: Promise<Pr
         </div>
       </section>
 
+      <section className="rajlaxmi-reasons" aria-labelledby="rajlaxmi-reasons-title">
+        <div className="rajlaxmi-reasons-heading">
+          <p className="eyebrow"><span className="eyebrow-line" /> THE RAJLAXMI PROMISE</p>
+          <h2 id="rajlaxmi-reasons-title">Why buy from<br /><em>Rajlaxmi Bosch Brand Store?</em></h2>
+          <p>More than appliances. A trusted local team to help you choose with confidence.</p>
+        </div>
+        <div className="rajlaxmi-reasons-grid">
+          <article><span aria-hidden="true">🚚</span><div><h3>Delivery across Bhubaneswar &amp; Cuttack</h3><p>Convenient local delivery for your Bosch home appliance. Contact us to confirm availability and timelines.</p></div></article>
+          <article><span aria-hidden="true">🛠️</span><div><h3>Installation assistance</h3><p>Installation assistance is available on request to help you get started with your new appliance.</p></div></article>
+          <article><span aria-hidden="true">🧾</span><div><h3>GST invoice available</h3><p>Get a GST invoice for eligible purchases, including business requirements.</p></div></article>
+          <article><span aria-hidden="true">💯</span><div><h3>100% genuine Bosch products</h3><p>Shop genuine Bosch home appliances with applicable manufacturer warranty support.</p></div></article>
+          <article><span aria-hidden="true">🏬</span><div><h3>Visit our Bhubaneswar store</h3><p>Visit us for product guidance, questions and in-person support before or after your purchase.</p></div></article>
+          <article><span aria-hidden="true">⭐</span><div><h3>Rated 4.7★ on Google</h3><p>A trusted local name serving customers across Bhubaneswar for over 30 years.</p></div></article>
+        </div>
+      </section>
+      <style>{`
+        .rajlaxmi-reasons{padding:64px 8.3%;background:#eae9e3;display:grid;grid-template-columns:.8fr 1.2fr;gap:7%;align-items:start}
+        .rajlaxmi-reasons-heading h2{font-size:clamp(30px,3.5vw,44px);line-height:1.12;letter-spacing:-.04em;margin:0 0 18px}
+        .rajlaxmi-reasons-heading>p:last-child{font-size:15px;line-height:1.8;color:#62645e;max-width:340px}
+        .rajlaxmi-reasons-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+        .rajlaxmi-reasons-grid article{display:flex;gap:13px;align-items:flex-start;padding:18px;background:#f8f8f5;border:1px solid #deded7;min-width:0}
+        .rajlaxmi-reasons-grid article>span{font-size:24px;line-height:1.3;flex:0 0 auto}
+        .rajlaxmi-reasons-grid h3{font-size:15px;line-height:1.4;margin:0 0 7px;font-weight:600}
+        .rajlaxmi-reasons-grid p{font-size:13px;line-height:1.65;color:#62645e;margin:0}
+        @media(max-width:760px){.rajlaxmi-reasons{padding:48px 6%;grid-template-columns:1fr;gap:20px}.rajlaxmi-reasons-grid{grid-template-columns:1fr 1fr;gap:8px}.rajlaxmi-reasons-grid article{padding:13px;gap:9px}.rajlaxmi-reasons-grid article>span{font-size:21px}.rajlaxmi-reasons-grid h3{font-size:14px}.rajlaxmi-reasons-grid p{font-size:12px}}
+        @media(max-width:420px){.rajlaxmi-reasons-grid{grid-template-columns:1fr}}
+      `}</style>
+
       <section className="product-related-section" aria-labelledby="product-related-title">
         <div className="product-related-heading">
           <div><p className="eyebrow"><span className="eyebrow-line" /> KEEP EXPLORING</p><h2 id="product-related-title">Related<br /><em>products.</em></h2></div>
