@@ -49,8 +49,8 @@ async function collectSpecs(page) {
       const cells = [...tr.querySelectorAll("th,td")];
       if (cells.length >= 2) add(cells[0].textContent, cells.slice(1).map((c) => c.textContent).join(" "));
     });
-    const lines = (document.body.innerText || "").split("\\n").map((s) => s.trim()).filter(Boolean);
-    const labels = /^(capacity|dimensions?|dimensions? \(.*\)|maximum spin speed|spin speed|drum volume|place settings|programmes?|water consumption|energy efficiency rating|energy consumption|noise level|main colour of product|colour|finish|home connect|no\\.? heating modes|usable volume.*|cavity capacity|microwave power|connection rating|net weight|width|height|depth|installation|type|product series|series|temperature range.*|cooking method|number of automatic programmes)$/i;
+    const lines = (document.body.innerText || "").split(String.fromCharCode(10)).map((s) => s.trim()).filter(Boolean);
+    const labels = /^(capacity|dimensions?|maximum spin speed|spin speed|drum volume|place settings|programmes?|water consumption|energy efficiency rating|energy consumption|noise level|main colour of product|colour|finish|home connect|heating modes|usable volume.*|cavity capacity|microwave power|connection rating|net weight|width|height|depth|installation|type|product series|series|temperature range.*|cooking method|number of automatic programmes)$/i;
     for (let i = 0; i < lines.length - 1; i++) if (labels.test(lines[i])) add(lines[i], lines[i + 1]);
     const seen = new Set();
     return rows.filter((r) => {
