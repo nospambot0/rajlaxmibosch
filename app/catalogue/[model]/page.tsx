@@ -28,7 +28,7 @@ export async function generateMetadata({ params }: { params: Promise<ProductPara
   if (!product) return { title: "Product not found" };
 
   const title = `Bosch ${product.model} ${product.name} | Bhubaneswar`;
-  const description = `Explore Bosch ${product.name} (model ${product.model}) at Rajlaxmi Enterprises, authorised Bosch home appliances retailer in Bhubaneswar, Odisha. View product features and specifications; enquire for offer price, stock and delivery.`;
+  const description = `Explore Bosch ${product.name} (model ${product.model}) at Rajlaxmi Enterprises, serving Bhubaneswar and Cuttack, Odisha. View verified product features and specifications; enquire for offer price, stock and local delivery.`;
   const canonical = `/catalogue/${product.model.toLowerCase()}`;
 
   return {
