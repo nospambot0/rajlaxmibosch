@@ -1,3 +1,5 @@
+import { autoCatalogueProducts } from "./auto-catalogue";
+
 export type CatalogueProduct = {
   id: string;
   name: string;
@@ -20,7 +22,7 @@ export type CatalogueProduct = {
   retailer: { mrp: number | null; offerPrice: number | null; availability: "enquiry" | "in-stock" | "out-of-stock" };
 };
 
-export const catalogueProducts: CatalogueProduct[] = [
+const manuallyCuratedCatalogueProducts: CatalogueProduct[] = [
   {
     id: "wga254zsin", name: "Series 6 front-loading washing machine 10 kg", model: "WGA254ZSIN",
     manufacturerMrp: 69690,
@@ -619,6 +621,14 @@ export const catalogueProducts: CatalogueProduct[] = [
     documentsUrl: "https://www.bosch-home.in/service/get-support/manual-search",
     retailer: { mrp: null, offerPrice: null, availability: "enquiry" }
   },
+];
+
+// Keep hand-curated product records authoritative; append only new Bosch models
+// discovered and validated by the scheduled official-catalogue sync.
+const curatedModelNumbers = new Set(manuallyCuratedCatalogueProducts.map((product) => product.model.toUpperCase()));
+export const catalogueProducts: CatalogueProduct[] = [
+  ...manuallyCuratedCatalogueProducts,
+  ...autoCatalogueProducts.filter((product) => !curatedModelNumbers.has(product.model.toUpperCase())),
 ];
 
 export const catalogueCategories = [
