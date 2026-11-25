@@ -35,7 +35,8 @@ const highlights = [
 
 export default function HomePage() {
   return (
-    <main id="top">\n      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema).replace(/</g, "\\\\u003c") }} />
+    <main id="top">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema).replace(/</g, "\\u003c") }} />
       <div className="announcement">
         <span>RAJLAXMI ENTERPRISES</span>
         <span className="announcement-center">BOSCH BRAND STORE</span>
