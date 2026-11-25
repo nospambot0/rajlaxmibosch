@@ -1,0 +1,45 @@
+name: Bosch catalogue sync
+
+on:
+  schedule:
+    - cron: "*/5 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: bosch-catalogue-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 12
+    steps:
+      - name: Check out main
+        uses: actions/checkout@v4
+        with:
+          ref: main
+          fetch-depth: 1
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - name: Install browser automation
+        run: |
+          npm install --no-save playwright
+          npx playwright install --with-deps chromium
+      - name: Discover and validate new Bosch products
+        run: node scripts/bosch-sync.mjs
+      - name: Commit verified new products
+        run: |
+          if git diff --quiet -- data/auto-catalogue.ts; then
+            echo "No verified new Bosch products found."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/auto-catalogue.ts
+          git commit -m "Sync verified Bosch catalogue additions"
+          git push origin main
